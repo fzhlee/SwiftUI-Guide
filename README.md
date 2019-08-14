@@ -143,7 +143,7 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
 	- [12Debug](#12Debug)
 	<br/>
 	
-# 第一章 常用控件Controls<br/>
+# 第一章 常用的Views<br/>
 <h4 id="1FirstProject"> 第1节：SwiftUI空白项目的创建步骤：<h4>
 1、打开Xcode，然后使用菜单命令:File > New > Project命令，打开项目创建窗口。<br/>
 2、在项目模板选择窗口中，选择Single View App模板，然后点击Next按钮，进入下一步设置窗口。<br/>
