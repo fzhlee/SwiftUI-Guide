@@ -233,3 +233,8 @@ VStack{
     }
 }
 ```
+
+<details close>
+  <summary>View running results</summary>
+<img width="100%" src="images/2Text-BasicStyle.png"/>
+</details>
