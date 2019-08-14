@@ -30,6 +30,13 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
 ![image](https://github.com/fzhlee/SwiftUI-Guide/blob/master/images/SwiftUI.png)
 <br/>
 图片来源：developer.apple.com<br/>
+
+## Examples navigator：
+
+* <span id="Image_D">Chapter 1:Controls</span>
+	- [1FirstProject](#1FirstProject)
+	- [2Text-BasicStyle](#2Text-BasicStyle)
+	
 # 第一章 常用控件Controls<br/>
 ## 第一节：SwiftUI空白项目的创建步骤：<br/>
 1、打开Xcode，然后使用菜单命令:File > New > Project命令，打开项目创建窗口。<br/>
@@ -128,7 +135,7 @@ func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options conn
         }
     }
 ```
-## 第二节：Text-BasicStyle：<br/>
+<h4 id="2Text-BasicStyle"> 第二节：Text-BasicStyle： </h4>
 Text类似于UIKit中的UILabel，用于显示一行或多行的文字内容。<br/>
 示例代码：<br/>
 ```swift
