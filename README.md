@@ -1,7 +1,7 @@
 # SwiftUI-Guide
 ![image](https://github.com/fzhlee/SwiftUI-Guide/blob/master/images/swiftui-logo.png)<br/>
 This page has 86 SwiftUI examples, and records the screenshots of all results here, hope to be helpful to you.<br/>
-All examples are based on Xcode 11 beta5 for now.<br/>
+All examples are based on Xcode 11 beta5 for now.<br/><br/>
 SwiftUI的80节教程及源码<br/>
 所有课程基于Xcode 11 beta5，并在Xcode 11 beta5上编译通过。<br/>
 当Xcode11正式版发布之后，会更新所有源码，以适配Xcode 11正式版。<br/>
