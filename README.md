@@ -34,8 +34,8 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
 ## 示例导航区：
 
 * <span id="Image_D">第一章: 常用的Views</span>
-	- [1 FirstProject](#1FirstProject)
-	- [2 Text-BasicStyle](#2Text-BasicStyle)
+	- [First Project](#1FirstProject)
+	- [Text-BasicStyle](#2Text-BasicStyle)
 	- [3Text-Paragraph](#3Text-Paragraph)
 	- [4Text-Padding](#4Text-Padding)
 	- [5Text-FullScreen](#5Text-FullScreen)
@@ -303,7 +303,7 @@ VStack{
 
 
 <h4 id="3Text-Paragraph"> 第3节：Text-Paragraph： </h4>
-Text类似于UIKit中的UILabel，用于显示一行或多行的文字内容。<br/>
+关于Text的段落属性：<br/>
 示例代码：<br/>
 
 ```swift
@@ -356,7 +356,7 @@ VStack{
 
 
 <h4 id="4Text-Padding"> 第3节：Text-Padding： </h4>
-Text类似于UIKit中的UILabel，用于显示一行或多行的文字内容。<br/>
+复用padding特性，制作轮廓效果~<br/>
 示例代码：<br/>
 
 ```swift
