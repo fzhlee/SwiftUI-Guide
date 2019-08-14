@@ -138,7 +138,7 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
 	<br/>
 	
 # 第一章 常用控件Controls<br/>
-<h4 id="1FirstProject"> 第一节：SwiftUI空白项目的创建步骤：<h4>
+<h4 id="1FirstProject"> 第1节：SwiftUI空白项目的创建步骤：<h4>
 1、打开Xcode，然后使用菜单命令:File > New > Project命令，打开项目创建窗口。<br/>
 2、在项目模板选择窗口中，选择Single View App模板，然后点击Next按钮，进入下一步设置窗口。<br/>
 3、在项目配置窗口中，需要勾选Use SwiftUI复选框，然后填写其它的配置选项，点击Next按钮，完成项目的创建。<br/>
@@ -237,7 +237,7 @@ func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options conn
         }
     }
 ```
-<h4 id="2Text-BasicStyle"> 第二节：Text-BasicStyle： </h4>
+<h4 id="2Text-BasicStyle"> 第2节：Text-BasicStyle： </h4>
 Text类似于UIKit中的UILabel，用于显示一行或多行的文字内容。<br/>
 示例代码：<br/>
 
@@ -300,3 +300,91 @@ VStack{
   <summary>查看运行结果</summary>
 <img width="100%" src="images/2Text-BasicStyle.png"/>
 </details>
+
+
+<h4 id="3Text-Paragraph"> 第3节：Text-Paragraph： </h4>
+Text类似于UIKit中的UILabel，用于显示一行或多行的文字内容。<br/>
+示例代码：<br/>
+
+```swift
+VStack{
+
+    Text("www.hdjc8.com")
+
+    Text("www.hdjc8.com")
+	.tracking(10)
+
+    Text("www.hdjc8.com")
+	.kerning(10)
+
+    Text("www.hdjc8.com")
+	.blur(radius: 1)
+
+    Text("SwiftUI is an innovative, exceptionally simple way to build user interfaces across all Apple platforms with the power of Swift.")
+	.lineSpacing(20)
+//                .lineLimit(1)
+	.lineLimit(nil)
+
+    Text("www.hdjc8.com")
+	.offset(x: 40, y: 0)
+
+    Text("www.hdjc8.com")
+	.frame(width: 200, height: 80, alignment: .bottomTrailing)
+	.background(Color.orange)
+
+    VStack{
+	Text("www.hdjc8.com2")
+	    .position(x: 50, y: 50)
+	    .frame(width: 300, height: 100, alignment: .bottomTrailing)
+	    .background(Color.orange)
+
+	Text("Interactive\ntutorials\nfor\nXcode!")
+	    .multilineTextAlignment(.center)
+	    .lineLimit(4)
+
+	Text("Hello\nInteractive Tutorials!").multilineTextAlignment(.leading)
+    }
+
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/3Text-Paragraph.png"/>
+</details>
+
+
+
+<h4 id="4Text-Padding"> 第3节：Text-Padding： </h4>
+Text类似于UIKit中的UILabel，用于显示一行或多行的文字内容。<br/>
+示例代码：<br/>
+
+```swift
+VStack{
+    Text("www.hdjc8.com")
+	.background(Color.black)
+	.foregroundColor(.white)
+	.padding(20)
+
+    Text("www.hdjc8.com")
+	.padding()
+	.background(Color.black)
+	.foregroundColor(.white)
+
+    Text("Swift User Interface")
+	.font(.largeTitle)
+	.foregroundColor(.black)
+	.padding(15)
+	.background(Color.yellow)
+	.padding(15)
+	.background(Color.orange)
+	.padding(10)
+	.background(Color.red)
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/4Text-Padding.png"/>
+</details>
+
