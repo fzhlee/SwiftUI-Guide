@@ -33,9 +33,9 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
 
 ## 示例导航区：
 
-* <span id="Image_D">Chapter 1: 常用的Views</span>
-	- [1FirstProject](#1FirstProject)
-	- [2Text-BasicStyle](#2Text-BasicStyle)
+* <span id="Image_D">第一章: 常用的Views</span>
+	- [1 FirstProject](#1FirstProject)
+	- [2 Text-BasicStyle](#2Text-BasicStyle)
 	- [3Text-Paragraph](#3Text-Paragraph)
 	- [4Text-Padding](#4Text-Padding)
 	- [5Text-FullScreen](#5Text-FullScreen)
@@ -71,9 +71,71 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
 	- [35GradientRadial](#35GradientRadial)
 	<br/>
 
-* <span id="Image_D">Chapter 2: Animation动画</span>
+* <span id="Image_D">第二章: Animation动画</span>
 	- [1scaleEffect+default](#1scaleEffect+default)
 	- [2Opacity+linear](#2Opacity+linear)
+	- [3Offset+easeOut](#3Offset+easeOut)
+	- [4RotationEffect+spring](#4RotationEffect+spring)
+	- [5CombinedAnimation](#5CombinedAnimation)
+	- [6SpeadAndDelay](#6SpeadAndDelay)
+	- [7Repeating](#7Repeating)
+	- [8ToggleVisibility](#8ToggleVisibility)
+	- [9AsymmetricTransition](#9AsymmetricTransition)
+	<br/>
+
+* <span id="Image_D">第三章: Gesture手势</span>
+	- [1TapGesture+Single tap](#1TapGesture+Single tap)
+	- [2TapGesture+Double tap](#2TapGesture+Double tap)
+	- [3LongPressGesture](#3LongPressGesture)
+	- [4RotationGesture](#4RotationGesture)
+	- [5DragGesture](#5DragGesture)
+	- [6LongPressGestureAndDragGesture](#6LongPressGestureAndDragGesture)
+	<br/>
+
+* <span id="Image_D">第四章: Layout布局</span>
+	- [1Group](#1Group)
+	- [2HSTack](#2HSTack)
+	- [3VSTack](#3VSTack)
+	- [4ZSTack](#4ZSTack)
+	- [5List-Basic](#5List-Basic)
+	- [6List-Insert](#6List-Insert)
+	- [7List-Delete](#7List-Delete)
+	- [8List-Move](#8List-Move)
+	- [9List-DeleteAndMove](#9List-DeleteAndMove)
+	- [10ScrollView-Vertical](#10ScrollView-Vertical)
+	- [11ScrollView-Horizontal](#11ScrollView-Horizontal)
+	- [12ScrollView-VerticalAndHorizontal](#12ScrollView-VerticalAndHorizontal)
+	- [13Form-Basic](#13Form-Basic)
+	- [14Form-Segment](#14Form-Segment)
+	- [15Form-EnableDisable](#15Form-EnableDisable)
+	- [16Form-ShowHide](#16Form-ShowHide)
+	<br/>
+
+* <span id="Image_D">第五章: DataFlow数据流</span>
+	- [1NavigationLink](#1NavigationLink)
+	- [2NavigationLinkAndGoBack](#2NavigationLinkAndGoBack)
+	- [3PageNavigation](#3PageNavigation)
+	- [4ObjectBinding](#4ObjectBinding)
+	- [5EnviromentObject](#5EnviromentObject)
+	- [6Show_Modal](#6Show_Modal)
+	- [7Show-Alert](#7Show-Alert)
+	- [8Show-ActionSheet](#8Show-ActionSheet)
+	<br/>
+
+* <span id="Image_D">第六章: More更多</span>
+	- [1PreviewInNavigationView](#1PreviewInNavigationView)
+	- [2Background](#2Background)
+	- [3SizeCategory](#3SizeCategory)
+	- [4PreviewDevice](#4PreviewDevice)
+	- [5ViewAsProperties](#5ViewAsProperties)
+	- [6onAppear-onDisappear](#6onAppear-onDisappear)
+	- [7ColorScheme-LightAndDark](#7ColorScheme-LightAndDark)
+	- [8AnyView](#8AnyView)
+	- [9NavigationBarTitle](#9NavigationBarTitle)
+	- [10NavigationItem](#10NavigationItem)
+	- [11ViewModifier](#11ViewModifier)
+	- [12Debug](#12Debug)
+	<br/>
 	
 # 第一章 常用控件Controls<br/>
 <h4 id="1FirstProject"> 第一节：SwiftUI空白项目的创建步骤：<h4>
