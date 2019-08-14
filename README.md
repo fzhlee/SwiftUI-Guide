@@ -456,5 +456,5 @@ Text("Interactive ")
 <img width="100%" src="images/7Text-Append.png"/>
 </details>
 
-[<img width="178" src="images/topIcon.png"/>](#ExampleNavigator)
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
 
