@@ -237,6 +237,10 @@ func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options conn
         }
     }
 ```
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
 <h4 id="2Text-BasicStyle"> 第2节：Text-BasicStyle： </h4>
 Text类似于UIKit中的UILabel，用于显示一行或多行的文字内容。<br/>
 示例代码：<br/>
@@ -301,6 +305,9 @@ VStack{
 <img width="100%" src="images/2Text-BasicStyle.png"/>
 </details>
 
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
 
 <h4 id="3Text-Paragraph"> 第3节：Text-Paragraph： </h4>
 关于Text的段落属性：<br/>
@@ -354,6 +361,9 @@ VStack{
 </details>
 
 
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
 
 <h4 id="4Text-Padding"> 第4节：Text-Padding： </h4>
 复用padding特性，制作轮廓效果~<br/>
@@ -388,6 +398,9 @@ VStack{
 <img width="100%" src="images/4Text-Padding.png"/>
 </details>
 
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
 
 <h4 id="5Text-FullScreen"> 第5节：Text-FullScreen： </h4>
 <br/>
@@ -405,6 +418,9 @@ Text("Hello World")
   <summary>查看运行结果</summary>
 <img width="100%" src="images/5Text-FullScreen.png"/>
 </details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
 
 <h4 id="6Text-DateFormatter"> 第6节：Text-DateFormatter： </h4>
 <br/>
