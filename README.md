@@ -84,8 +84,8 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
 	<br/>
 
 * <span id="Image_D">第三章: Gesture手势</span>
-	- [1TapGesture+Single tap](#1TapGesture+Single tap)
-	- [2TapGesture+Double tap](#2TapGesture+Double tap)
+	- [1TapGesture+Single tap](#1TapGesture+Singletap)
+	- [2TapGesture+Double tap](#2TapGesture+Doubletap)
 	- [3LongPressGesture](#3LongPressGesture)
 	- [4RotationGesture](#4RotationGesture)
 	- [5DragGesture](#5DragGesture)
@@ -355,7 +355,7 @@ VStack{
 
 
 
-<h4 id="4Text-Padding"> 第3节：Text-Padding： </h4>
+<h4 id="4Text-Padding"> 第4节：Text-Padding： </h4>
 复用padding特性，制作轮廓效果~<br/>
 示例代码：<br/>
 
@@ -388,3 +388,70 @@ VStack{
 <img width="100%" src="images/4Text-Padding.png"/>
 </details>
 
+
+<h4 id="5Text-FullScreen"> 第5节：Text-FullScreen： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+Text("Hello World")
+    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+    .background(Color.orange)
+    .font(.largeTitle)
+    .edgesIgnoringSafeArea(.all)
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/5Text-FullScreen.png"/>
+</details>
+
+<h4 id="6Text-DateFormatter"> 第6节：Text-DateFormatter： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+var now = Date()
+static let dateFormatter: DateFormatter = {
+let formatter = DateFormatter()
+formatter.dateStyle = .long
+return formatter
+}()
+
+var body: some View {
+
+Text("The time is: \(now, formatter: Self.dateFormatter)")
+    .font(.title)
+    .padding()
+
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/6Text-DateFormatter.png"/>
+</details>
+
+<h4 id="7Text-Append"> 第7节：7Text-Append： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+Text("Interactive ")
+    .foregroundColor(.yellow)
+    .fontWeight(.heavy)
++ Text("tutorials ")
+    .foregroundColor(.orange)
+    .strikethrough()
++ Text("for ")
+    .foregroundColor(.red)
+    .italic()
++ Text("SwiftUI")
+    .foregroundColor(.purple)
+    .underline()
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/7Text-Append.png"/>
+</details>
