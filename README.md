@@ -66,10 +66,10 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
 </ul>
 
 ```
-<em>//导入SwiftUI框架</em>
+*//导入SwiftUI框架*
 import SwiftUI 		             
 
-<em>//定义一个名为ContentView的结构体，该结构体遵循View协议，遵循View协议的元素才可以在SwiftUI框架中。就像在UIKit中，所见皆UIView一样，在SwiftUI中，所见皆是View。</em>
+* //定义一个名为ContentView的结构体，该结构体遵循View协议，遵循View协议的元素才可以在SwiftUI框架中。就像在UIKit中，所见皆UIView一样，在SwiftUI中，所见皆是View。*
 struct ContentView: View {		 
 <em>//添加View协议中的body属性，在body属性中通过SwiftUI提供的各种布局控件，完成界面元素的搭建。关键词some表示返回的是某种View，但是SwiftUI不需要在意是具体的哪种View</em>
     var body: some View {
