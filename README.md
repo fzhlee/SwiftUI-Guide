@@ -1,9 +1,11 @@
 # SwiftUI-Guide
 ![image](https://github.com/fzhlee/SwiftUI-Guide/blob/master/images/swiftui-logo.png)<br/>
-This page has 86 SwiftUI examples, and records the screenshots of all results here, hope to be helpful to you.<br/>
-All examples are based on Xcode 11 beta5 for now.<br/>
 <br/>
-**SwiftUI is an innovative, exceptionally simple way to build user interfaces across all Apple platforms with the power of Swift. Build user interfaces for any Apple device using just one set of tools and APIs. With a declarative Swift syntax that’s easy to read and natural to write, SwiftUI works seamlessly with new Xcode design tools to keep your code and design perfectly in sync. Automatic support for Dynamic Type, Dark Mode, localization, and accessibility means your first line of SwiftUI code is already the most powerful UI code you’ve ever written.**
+**SwiftUI<br/>
+更好的应用，更少的代码。<br/>
+SwiftUI是一种创新、简单的iOS开发中的界面布局方案，可以通过Swift语言的强大功能，在所有的Apple平台上快速构建用户界面。 仅使用一组工具和API为任何Apple设备构建用户界面。 <br/>
+SwiftUI具有易于阅读和自然编写的声明式Swift语法，可与新的Xcode设计工具无缝协作，使您的代码和设计完美同步。 <br/>
+自动支持动态类型、暗黑模式、本地化和可访问性，意味着您的第一行SwiftUI代码已经是您编写过的最强大的UI代码了（太煽情了~）。**
 <br/>
 
 ---
