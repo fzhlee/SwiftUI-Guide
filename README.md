@@ -65,7 +65,7 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
   <li>您的代码比以前更简单，更易于阅读，从而节省您的时间和维护。</li>
 </ul>
 
-```
+```swift
 //导入SwiftUI框架
 import SwiftUI 		             
 
