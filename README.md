@@ -31,11 +31,49 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
 <br/>
 图片来源：developer.apple.com<br/>
 
-## Examples navigator：
+## 示例导航区：
 
-* <span id="Image_D">Chapter 1:Controls</span>
+* <span id="Image_D">Chapter 1: 常用的Views</span>
 	- [1FirstProject](#1FirstProject)
 	- [2Text-BasicStyle](#2Text-BasicStyle)
+	- [3Text-Paragraph](#3Text-Paragraph)
+	- [4Text-Padding](#4Text-Padding)
+	- [5Text-FullScreen](#5Text-FullScreen)
+	- [6Text-DateFormatter](#6Text-DateFormatter)
+	- [7Text-Append](#7Text-Append)
+	- [8TextField](#8TextField)
+	- [9TextField-SecureField](#9TextField-SecureField)
+	- [10Button](#10Button)
+	- [11Button-sheet](#11Button-sheet)
+	- [12Spacer](#12Spacer)
+	- [13Divider](#13Divider)
+	- [14Image-Basic](#14Image-Basic)
+	- [15Image-Style](#15Image-Style)
+	- [16Image-Processing](#16Image-Processing)
+	- [17Image-Blend](#17Image-Blend)
+	- [18Image-Mask](#18Image-Mask)
+	- [19Image-Transform](#19Image-Transform)
+	- [20Image-Web](#20Image-Web)
+	- [21Picker](#21Picker)
+	- [22PickerDate](#22PickerDate)
+	- [23Slider](#23Slider)
+	- [24Stepper](#24Stepper)
+	- [25Segment](#25Segment)
+	- [26Toggle](#26Toggle)
+	- [27TabView](#27TabView)
+	- [28Webview](#28Webview)
+	- [29MapView](#29MapView)
+	- [30Shape-Circle](#30Shape-Circle)
+	- [31Shape-Rectangle](#31Shape-Rectangle)
+	- [32Shape-Path](#32Shape-Path)
+	- [33GradientLinear](#33GradientLinear)
+	- [34GradientAngular](#34GradientAngular)
+	- [35GradientRadial](#35GradientRadial)
+	<br/>
+
+* <span id="Image_D">Chapter 2: Animation动画</span>
+	- [1scaleEffect+default](#1scaleEffect+default)
+	- [2Opacity+linear](#2Opacity+linear)
 	
 # 第一章 常用控件Controls<br/>
 <h4 id="1FirstProject"> 第一节：SwiftUI空白项目的创建步骤：<h4>
