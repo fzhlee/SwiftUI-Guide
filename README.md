@@ -297,6 +297,6 @@ VStack{
 ```
 
 <details close>
-  <summary>View running results</summary>
+  <summary>查看运行结果</summary>
 <img width="100%" src="images/2Text-BasicStyle.png"/>
 </details>
