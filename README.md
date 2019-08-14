@@ -1,7 +1,7 @@
 # SwiftUI-Guide
 ![image](https://github.com/fzhlee/SwiftUI-Guide/blob/master/images/swiftui-logo.png)<br/>
 图片来源：developer.apple.com
-<br/>
+<br/><br/>
 **SwiftUI<br/>
 更好的应用，更少的代码。<br/>
 SwiftUI是一种创新、简单的iOS开发中的界面布局方案，可以通过Swift语言的强大功能，在所有的Apple平台上快速构建用户界面。 仅使用一组工具和API为任何Apple设备构建用户界面。 <br/>
@@ -38,7 +38,7 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
 	- [2Text-BasicStyle](#2Text-BasicStyle)
 	
 # 第一章 常用控件Controls<br/>
-## 第一节：SwiftUI空白项目的创建步骤：<br/>
+<h4 id="1FirstProject"> 第一节：SwiftUI空白项目的创建步骤：<h4>
 1、打开Xcode，然后使用菜单命令:File > New > Project命令，打开项目创建窗口。<br/>
 2、在项目模板选择窗口中，选择Single View App模板，然后点击Next按钮，进入下一步设置窗口。<br/>
 3、在项目配置窗口中，需要勾选Use SwiftUI复选框，然后填写其它的配置选项，点击Next按钮，完成项目的创建。<br/>
@@ -138,6 +138,7 @@ func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options conn
 <h4 id="2Text-BasicStyle"> 第二节：Text-BasicStyle： </h4>
 Text类似于UIKit中的UILabel，用于显示一行或多行的文字内容。<br/>
 示例代码：<br/>
+
 ```swift
 VStack{
     //Basic style
