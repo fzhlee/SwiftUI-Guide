@@ -33,7 +33,7 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
 
 ## 示例导航区：
 
-* <span id="Image_D">第一章: 常用的Views</span>
+* <span id="ExampleNavigator">第一章: 常用的Views</span>
 	- [First Project](#1FirstProject)
 	- [Text-BasicStyle](#2Text-BasicStyle)
 	- [3Text-Paragraph](#3Text-Paragraph)
@@ -455,3 +455,4 @@ Text("Interactive ")
   <summary>查看运行结果</summary>
 <img width="100%" src="images/7Text-Append.png"/>
 </details>
+[<img width="100%" src="images/topIcon.png"/>](#ExampleNavigator)
