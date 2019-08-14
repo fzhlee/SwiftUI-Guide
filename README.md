@@ -1,10 +1,12 @@
 # SwiftUI-Guide
 ![image](https://github.com/fzhlee/SwiftUI-Guide/blob/master/images/swiftui-logo.png)<br/>
-SwiftUI的86节教程及源码<br/>
+This page has 86 SwiftUI examples, and records the screenshots of all results here, hope to be helpful to you.<br/>
+All examples are based on Xcode 11 beta5 for now.<br/>
+SwiftUI的80节教程及源码<br/>
 所有课程基于Xcode 11 beta5，并在Xcode 11 beta5上编译通过。<br/>
 当Xcode11正式版发布之后，会更新所有源码，以适配Xcode 11正式版。<br/>
 <br/>
-iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费下载：<br/>
+Interactive tutorials for iOS Programming<br/>
 1、互动教程合集：https://apps.apple.com/cn/app/id1392811165<br/>
 2、Xcode互动教程免费下载地址：https://itunes.apple.com/cn/app/id1063100471<br/>
 3、Swift语言入门实例互动教程免费下载地址：https://itunes.apple.com/cn/app/id1320746678<br/>
