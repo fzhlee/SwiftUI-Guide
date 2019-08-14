@@ -409,7 +409,7 @@ VStack{
 
 
 <h4 id="5Text-FullScreen"> 第5节：Text-FullScreen： </h4>
-<br/>
+通过edgesIgnoringSafeArea，忽略安全区域，使文本框撑满屏幕。<br/>
 示例代码：<br/>
 
 ```swift
@@ -429,7 +429,7 @@ Text("Hello World")
 
 
 <h4 id="6Text-DateFormatter"> 第6节：Text-DateFormatter： </h4>
-<br/>
+对文本中的日期内容进行格式化。<br/>
 示例代码：<br/>
 
 ```swift
@@ -455,7 +455,7 @@ Text("The time is: \(now, formatter: Self.dateFormatter)")
 </details>
 
 <h4 id="7Text-Append"> 第7节：Text-Append： </h4>
-<br/>
+添加扩展方法+，对文本View进行拼接，实现富文本的艺术效果。<br/>
 示例代码：<br/>
 
 ```swift
@@ -481,7 +481,7 @@ Text("Interactive ")
 [<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
 
 <h4 id="8TextField"> 第8节：TextField： </h4>
-<br/>
+TextField类似于UIKit中的UITextField，用于实现用户的文字内容的输入。<br/>
 示例代码：<br/>
 
 ```swift
@@ -531,7 +531,7 @@ struct ContentView_Previews : PreviewProvider {
 [<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
 
 <h4 id="9TextField-SecureField"> 第9节：TextField-SecureField： </h4>
-<br/>
+相当于UITexfield的secureTextEntry的属性设置为true时的情况。<br/>
 示例代码：<br/>
 
 ```swift
@@ -565,7 +565,7 @@ struct ContentView : View {
 [<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
 
 <h4 id="10Button"> 第10节：Button： </h4>
-<br/>
+相当于UIKit中的UIButton控件，用于实现接收用户的点击事件。<br/>
 示例代码：<br/>
 
 ```swift
@@ -635,7 +635,7 @@ VStack{
 [<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
 
 <h4 id="11Button-sheet"> 第11节：Button-sheet： </h4>
-<br/>
+当点击按钮时，弹出Modl模态窗口。<br/>
 示例代码：<br/>
 
 ```swift
@@ -648,7 +648,7 @@ struct ContentView : View {
             Button("Show modal") {
                 self.isPresented = true
             }.sheet(isPresented: $isPresented, content: {
-                MyDetailView(message: "Model window")
+                MyDetailView(message: "Modal window")
             })
         }
     }
@@ -675,7 +675,7 @@ struct MyDetailView: View {
 
 
 <h4 id="12Spacer"> 第12节：Spacer： </h4>
-<br/>
+Spacer是一个灵活的空间视图，它可以沿着包含堆栈布局的主轴进行扩展，如果不包含在堆栈中，则在两个x或y轴上进行扩展。<br/>
 示例代码：<br/>
 
 ```swift
@@ -713,7 +713,7 @@ var body: some View {
 
 
 <h4 id="13Divider"> 第13节：Divider： </h4>
-<br/>
+当Divider包含在VStack或YStack中时，Divider跨越堆栈的短轴延伸，或者当不在堆栈中时则进行水平分隔。<br/>
 示例代码：<br/>
 
 ```swift
@@ -745,7 +745,7 @@ VStack{
 
 
 <h4 id="14Image-Basic"> 第14节：Image-Basic： </h4>
-<br/>
+Image相当于UIKit中的UIImage控件，用于显示指定名称的图片，或者显示指定systemName的图标。<br/>
 示例代码：<br/>
 
 ```swift
@@ -773,7 +773,7 @@ VStack{
 
 
 <h4 id="15Image-Style"> 第15节：Image-Style： </h4>
-<br/>
+设置图像的边框、不透明度、阴影等属性。<br/>
 示例代码：<br/>
 
 ```swift
@@ -807,7 +807,7 @@ ScrollView{
 
 
 <h4 id="16Image-Processing"> 第16节：Image-Processing： </h4>
-<br/>
+给图片进行图像颜色的设置：设置模糊效果、设置图片的亮度、反转图片的颜色、对比度等效果<br/>
 示例代码：<br/>
 
 ```swift
@@ -859,7 +859,7 @@ ScrollView{
 
 
 <h4 id="17Image-Blend"> 第17节：Image-Blend： </h4>
-<br/>
+在图像之间进行颜色像素之间的运算。<br/>
 示例代码：<br/>
 
 ```swift
@@ -886,7 +886,7 @@ VStack{
 
 
 <h4 id="18Image-Mask"> 第18节：Image-Mask： </h4>
-<br/>
+给图片添加遮罩效果。<br/>
 示例代码：<br/>
 
 ```swift
@@ -917,7 +917,7 @@ VStack{
 
 
 <h4 id="19Image-Transform"> 第19节：Image-Transform： </h4>
-<br/>
+给图像应用缩放、旋转等变形效果。<br/>
 示例代码：<br/>
 
 ```swift
@@ -958,7 +958,7 @@ ScrollView{
 
 
 <h4 id="20Image-Web"> 第20节：Image-Web： </h4>
-<br/>
+异步加载网络图片。<br/>
 示例代码：<br/>
 
 ```swift
@@ -996,7 +996,7 @@ struct ContentView : View {
 
 
 <h4 id="21Picker"> 第21节：Picker： </h4>
-<br/>
+Picker相当于UIKit中的UIPickerView，用于实现若干项目的选择。<br/>
 示例代码：<br/>
 
 ```swift
@@ -1031,7 +1031,7 @@ struct ContentView : View {
 
 
 <h4 id="22PickerDate"> 第22节：PickerDate： </h4>
-<br/>
+PickerDate相当于UIKit中的UIDatePicker控件，用于实现时间和日期项目的选择。<br/>
 示例代码：<br/>
 
 ```swift
@@ -1073,7 +1073,7 @@ struct ContentView : View {
 
 
 <h4 id="23Slider"> 第23节：Slider： </h4>
-<br/>
+Slider相当于UIKit中的UISlider，通过移动滑杆实现指定区域和间隔的数值的选择。<br/>
 示例代码：<br/>
 
 ```swift
@@ -1113,7 +1113,7 @@ struct ContentView : View {
 
 
 <h4 id="24Stepper"> 第24节：Stepper： </h4>
-<br/>
+Stepper步进器相当于UIKit中的UIStepper，用于实现数据的递增和递减。<br/>
 示例代码：<br/>
 
 ```swift
@@ -1152,7 +1152,7 @@ struct ContentView : View {
 
 
 <h4 id="25Segment"> 第25节：Segment： </h4>
-<br/>
+Segment分段控件，类似于UIKit中的UISegmentedControl。分段控件提供一栏选项按钮，一次只能激活其中一个选项按钮。用于实现若干选项的单选。<br/>
 示例代码：<br/>
 
 ```swift
