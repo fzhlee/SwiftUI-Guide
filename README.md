@@ -43,7 +43,9 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
 2、在项目模板选择窗口中，选择Single View App模板，然后点击Next按钮，进入下一步设置窗口。<br/>
 3、在项目配置窗口中，需要勾选Use SwiftUI复选框，然后填写其它的配置选项，点击Next按钮，完成项目的创建。<br/>
 4、SwiftUI项目创建完成之后，其项目结构和代码功能如下图所示：<br/>
+	
 ![image](https://github.com/fzhlee/SwiftUI-Guide/blob/master/images/SwiftUIXcode.png) 
+
 <br/>
 5、项目导航区：<br/>
 
