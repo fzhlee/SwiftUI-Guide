@@ -11,6 +11,12 @@ SwiftUI具有易于阅读和自然编写的声明式Swift语法，可与新的Xc
 
 ---
 
+实用快捷键
+Command + Option + Enter : 打开或关闭预览窗口
+Command + Option + P : 刷新预览窗口
+
+---
+
 <br/>
 SwiftUI的80节教程及源码<br/>
 所有课程基于Xcode 11 beta5，并在Xcode 11 beta5上编译通过。<br/>
