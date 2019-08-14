@@ -454,7 +454,7 @@ Text("The time is: \(now, formatter: Self.dateFormatter)")
 <img width="100%" src="images/6Text-DateFormatter.png"/>
 </details>
 
-<h4 id="7Text-Append"> 第7节：7Text-Append： </h4>
+<h4 id="7Text-Append"> 第7节：Text-Append： </h4>
 <br/>
 示例代码：<br/>
 
@@ -476,6 +476,1024 @@ Text("Interactive ")
 <details close>
   <summary>查看运行结果</summary>
 <img width="100%" src="images/7Text-Append.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+<h4 id="8TextField"> 第8节：TextField： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    @State var username : String
+    @State var nickname : String
+    
+    var body: some View {
+        
+        VStack{
+            
+            Text("Your username is \(username)!")
+            
+            Text("Your nickname is \(nickname)!")
+            
+            TextField("User Name", text: $username, onEditingChanged: { (value) in
+                print("onEditingChanged:\(self.username)")
+            }) {
+                print("onCommit:\(self.username)")
+            }.textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            TextField("Nick Name", text: $nickname)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+        }
+        .padding()
+        
+    }
+}
+
+#if DEBUG
+struct ContentView_Previews : PreviewProvider {
+    
+    static var previews: some View {
+        ContentView(username: "", nickname: "")
+    }
+}
+#endif
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/8TextField.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+<h4 id="9TextField-SecureField"> 第9节：TextField-SecureField： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    @State var password : String
+    
+    var body: some View {
+        
+        VStack{
+            
+            Text("Your password is \(password)!")
+            
+            SecureField("Your password", text: $password) {
+                print("Your password is \(self.password)!")
+            }
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+        }
+        .padding()
+        
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/9TextField-SecureField.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+<h4 id="10Button"> 第10节：Button： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+VStack{
+
+    Button("First button") {
+	print("---First button action.")
+    }
+
+    Button(action: {
+	print("---Second button action.")
+    }) {
+	Text("Second button")
+    }
+
+    Button(action: {
+	print("---Third button action.")
+    }) {
+	Image(systemName: "clock")
+	Text("Third button")
+    }
+    .foregroundColor(Color.white)
+    .background(Color.orange)
+
+    //padding for button : the tap area is wrong
+    Button(action: {
+	print("---padding for button.")
+    }){
+	Text("Default padding")
+    }
+    .padding()
+    .background(Color.yellow)
+
+    //padding for label : the tap area is correct!
+    Button(action: {
+	print("---padding for label.")
+    }){
+	Text("Default padding")
+	    .padding()
+	    .background(Color.yellow)
+    }
+
+    Button(action: {
+	print("---Button with image.")
+    }){
+	HStack {
+	    Image(systemName: "star")
+	    Text("Button with image")
+	}
+	.padding()
+	    .background(Color.yellow)
+    }
+    Button(action: {
+	print("---modifier button")
+    }){
+	Text("modifier button")
+	    .modifier(MyButtonStyle())
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/10Button.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+<h4 id="11Button-sheet"> 第11节：Button-sheet： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+
+    @State var isPresented = false
+    
+    var body: some View {
+        VStack{
+            Button("Show modal") {
+                self.isPresented = true
+            }.sheet(isPresented: $isPresented, content: {
+                MyDetailView(message: "Model window")
+            })
+        }
+    }
+}
+
+struct MyDetailView: View {
+    let message: String
+
+    var body: some View {
+        VStack {
+            Text(message)
+                .font(.largeTitle)
+        }
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/11Button-sheet.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="12Spacer"> 第12节：Spacer： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+var body: some View {
+        VStack{
+            HStack {
+                Image(systemName: "clock")
+                Spacer()
+           }
+           .padding()
+        
+           HStack {
+                Image(systemName: "clock")
+                Spacer()
+                Text("\(Date())")
+           }
+           .padding()
+        
+            HStack {
+                 Image(systemName: "clock")
+                 Spacer(minLength: 50)
+                 Text("\(Date())")
+            }
+            .padding()
+        }
+    }
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/12Spacer.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="13Divider"> 第13节：Divider： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+VStack{
+    VStack {
+	 Image(systemName: "clock")
+	 Divider()
+	 Text("\(Date())")
+    }
+    .padding()
+
+    VStack {
+	 Image(systemName: "clock")
+	 Divider()
+	    .background(Color.purple)
+	    .scaleEffect(CGSize(width: 1, height: 10))
+	 Text("\(Date())")
+    }
+    .padding()
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/13Divider.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="14Image-Basic"> 第14节：Image-Basic： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+VStack{
+            
+    Image("girlPicture")
+
+    Image(systemName: "arkit")
+	.foregroundColor(.orange)
+	.font(.system(size: 48))
+
+    Image("girlPicture")
+	.resizable()
+	.aspectRatio(contentMode: .fit)
+}
+.padding()
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/14Image-Basic.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="15Image-Style"> 第15节：Image-Style： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+ScrollView{
+     VStack{
+
+	Image("girlPicture")
+	    .border(Color.orange)
+
+	Image("girlPicture")
+	    .border(Color.orange, width: 10)
+
+	Image("girlPicture")
+	    .opacity(0.5)
+
+	Image("girlPicture")
+	    .shadow(radius: 10)
+
+	Image("girlPicture")
+	    .shadow(color: .purple, radius: 20, x: 20, y: 20)
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/15Image-Style.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="16Image-Processing"> 第16节：Image-Processing： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+ScrollView{
+     VStack{
+	Image("girlPicture")
+
+	Image("girlPicture")
+	    .blur(radius: CGFloat(2))
+
+	Image("girlPicture")
+	    .blur(radius: CGFloat(2), opaque: true)
+
+	Image("girlPicture")
+	    .brightness(0.2)
+
+	Image("girlPicture")
+	    .colorInvert()
+
+	Image("girlPicture")
+	    .colorMultiply(Color.yellow)
+
+	Image("girlPicture")
+	    .contrast(1.5)
+    }
+
+    VStack{
+	Image("girlPicture")
+	    .hueRotation(Angle.degrees(180))
+
+	Image("girlPicture")
+	    .saturation(10)
+
+	Image("girlPicture")
+	    .grayscale(5.5)
+
+	Image("girlPicture")
+	    .luminanceToAlpha()
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/16Image-Processing.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="17Image-Blend"> 第17节：Image-Blend： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+VStack{
+            
+    Image("girlPicture")
+	.blendMode(.difference)
+
+    ZStack{
+	Image("texture")
+	Image("girlPicture")
+	    .blendMode(.multiply)
+    }
+}
+.padding()
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/17Image-Blend.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="18Image-Mask"> 第18节：Image-Mask： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+VStack{
+
+    Image("girlPicture")
+	.clipShape(Circle())
+
+    Image("girlPicture")
+	.mask(Circle())
+
+    Image("texture")
+    .resizable()
+    .frame(width: 300, height: 300)
+    .mask(
+	Text("SWIFT UI!")
+	    .font(Font.system(size: 64).bold()))
+
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/18Image-Mask.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="19Image-Transform"> 第19节：Image-Transform： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+ScrollView{
+            
+    VStack{
+	Image("girlPicture")
+	    .scaleEffect(0.8)
+
+	Image("girlPicture")
+	    .scaleEffect(CGSize(width: 1.2, height: 1))
+
+	Image("girlPicture")
+	    .scaleEffect(x: 1.5, y: 1, anchor: UnitPoint.bottomLeading)
+    }
+
+     VStack{
+
+	Image("girlPicture")
+	     .rotationEffect(Angle.init(degrees: 90))
+
+	Image("girlPicture")
+	    .rotationEffect(Angle.init(degrees: 30), anchor: UnitPoint.init(x: 0, y: 0))
+
+	Image("girlPicture")
+	    .rotation3DEffect(Angle.init(degrees: 30), axis: (x: CGFloat(0.1), y: CGFloat(0.1), z: CGFloat(0)))
+
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/19Image-Transform.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="20Image-Web"> 第20节：Image-Web： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    @State private var remoteImage : UIImage? = nil
+    let placeholderOne = UIImage(named: "Picture")
+    
+    var body: some View {
+        Image(uiImage: self.remoteImage ?? placeholderOne!)
+            .onAppear(perform: fetchRemoteImage)
+    }
+    
+    func fetchRemoteImage()
+    {
+        guard let url = URL(string: "http://hdjc8.com/images/logo.png") else { return }
+        URLSession.shared.dataTask(with: url){ (data, response, error) in
+            if let image = UIImage(data: data!){
+                self.remoteImage = image
+            }
+            else{
+                print(error ?? "")
+            }
+        }.resume()
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/20Image-Web.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="21Picker"> 第21节：Picker： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+     var fruits = ["Apple", "Banner", "Pear", "Watermelon"]
+     var colors = [Color.blue, Color.orange, Color.red, Color.purple]
+     @State private var selectedItem = 0
+
+     var body: some View {
+        VStack {
+            
+           Picker(selection: $selectedItem, label: Text("Fruits")) {
+              ForEach(0 ..< fruits.count) {
+                Text(self.fruits[$0]).tag($0).foregroundColor(self.colors[$0])
+              }
+           }
+           Text("Your choice: ")
+            + Text("\(fruits[selectedItem])").foregroundColor(self.colors[selectedItem])
+        }
+     }
+}
+
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/21Picker.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="22PickerDate"> 第22节：PickerDate： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    var myDateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter
+    }
+
+    @State var selectedDate = Date()
+
+    var body: some View {
+        VStack {
+            DatePicker(selection: $selectedDate, displayedComponents: DatePickerComponents.hourAndMinute) {
+                Text("Date")
+            }
+            
+            DatePicker(selection: $selectedDate, displayedComponents: DatePickerComponents.date) {
+                Text("Date")
+            }
+
+            DatePicker(selection: $selectedDate,in: Date()...Date().advanced(by: 7*24*3600), displayedComponents: [.date, .hourAndMinute]) {
+                Text("Date")
+            }
+
+            Text("Your Choice: \(selectedDate, formatter: myDateFormatter)")
+        }
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/22PickerDate.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="23Slider"> 第23节：Slider： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+     @State var temperature: Double = 0
+
+       var body: some View {
+           VStack {
+                Slider(value: $temperature)
+                Slider(value: $temperature, in: -20...40)
+                Slider(value: $temperature, in: -20...40) { (item) in
+                    print(item)
+                }
+                HStack{
+                    Image(systemName: "sun.max")
+
+                    Slider(value: $temperature, in: -20...40, step: 2) { (item) in
+                        print(item)
+                    }.accentColor(.pink).colorInvert()
+                    
+                   Image(systemName: "sun.max.fill")
+                }.padding()
+
+                Text("The temperature is \(Int(temperature)).")
+           }
+       }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/23Slider.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="24Stepper"> 第24节：Stepper： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+     @State var temperature: Double = 0
+
+       var body: some View {
+        
+           VStack {
+                Stepper(onIncrement: {
+                    self.temperature += 1
+                }, onDecrement: {
+                    self.temperature -= 1
+                }, label: { Text("Temperature: \(Int(temperature))") })
+                
+                Stepper(onIncrement: {
+                    self.temperature += 1
+                }, onDecrement: {
+                    self.temperature -= 1
+                }, onEditingChanged: { (item) in
+                    print(item)
+                }, label: { Text("Temperature: \(Int(temperature))") })
+           
+       }.padding()
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/24Stepper.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="25Segment"> 第25节：Segment： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    private var animals = ["🐶 Dog", "🐯 Tiger", "🐷 Pig"]
+    var colors = [Color.yellow, Color.orange, Color.red, Color.purple]
+    @State private var selectedAnimal = 0
+
+    var body: some View {
+        VStack {
+            Picker(selection: $selectedAnimal, label: Text("animals")) {
+               ForEach(0 ..< animals.count) {
+                Text(self.animals[$0]).tag($0)
+               }
+            }.pickerStyle(SegmentedPickerStyle())
+            Text("Your choice: \(animals[selectedAnimal])")
+        }
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/25Segment.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="26Toggle"> 第26节：Toggle： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    @State var showNotification = true
+
+    var body: some View {
+        VStack {
+            Text("Show Notification: ")
+            + Text("\(self.showNotification.description)")
+                .foregroundColor(.green)
+                .bold()
+                
+            
+            Toggle(isOn: $showNotification) {
+                Text("Show notification:")
+            }.padding()
+        }
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/26Toggle.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="27TabView"> 第27节：TabView： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+var body: some View {
+	TabView {
+	    Text("The home page.")
+		.font(.system(size: 36))
+		.tabItem({
+		    Image(systemName: "house")
+		    Text("Home") })
+		.tag(0)
+
+	    Text("The settings page")
+		.font(.system(size: 36))
+		.tabItem({
+		    Image(systemName: "gear")
+		    Text("Settings")
+		})
+		.tag(1)
+	}
+    }
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/27TabView.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="28Webview"> 第28节：Webview： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+import SwiftUI
+import WebKit
+
+struct ContentView : UIViewRepresentable {
+    
+    func makeUIView(context: UIViewRepresentableContext<ContentView>) -> WKWebView {
+        return WKWebView()
+    }
+    
+    func updateUIView(_ uiView: WKWebView, context: UIViewRepresentableContext<ContentView>) {
+        let request = URLRequest(url:URL(string: "https://apple.com")!)
+        uiView.load(request)
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/28Webview.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="29MapView"> 第29节：MapView： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+import SwiftUI
+import MapKit
+
+struct ContentView : UIViewRepresentable {
+    
+    func makeUIView(context: UIViewRepresentableContext<ContentView>) -> MKMapView {
+        return MKMapView()
+    }
+    
+    func updateUIView(_ uiView: MKMapView, context: UIViewRepresentableContext<ContentView>) {
+        uiView.showsUserLocation = true
+        uiView.mapType = MKMapType.satellite
+        
+        let coordinate2D = CLLocationCoordinate2D(latitude: 39.915352, longitude: 116.397105)
+        let zoomLevel = 0.02
+        let region = MKCoordinateRegion(center: coordinate2D, span: MKCoordinateSpan(latitudeDelta: zoomLevel, longitudeDelta: zoomLevel))
+        uiView.setRegion(uiView.regionThatFits(region), animated: true)
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/29MapView.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="30Shape-Circle"> 第30节：Shape-Circle： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+VStack{
+    Circle()
+    Circle()
+	.fill(Color.orange)
+	.frame(width: 200, height: 200)
+    ZStack {
+       Circle().fill(Color.purple)
+       Circle().fill(Color.yellow).scaleEffect(0.8)
+       Circle().fill(Color.orange).scaleEffect(0.6)
+    }
+    Rectangle()
+    Rectangle()
+	.fill(Color.orange)
+	.frame(width: 200, height: 200)
+    ZStack {
+       Rectangle().fill(Color.purple)
+	.frame(width: 300, height: 200)
+
+       Rectangle().fill(Color.yellow)
+	.frame(width: 300, height: 200)
+	.scaleEffect(0.8)
+
+       Rectangle()
+	.fill(Color.orange)
+	.frame(width: 300, height: 200)
+	.scaleEffect(0.6)
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/30Shape-Circle.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="31Shape-Rectangle"> 第31节：Shape-Rectangle： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+VStack{
+            
+    Rectangle()
+    Rectangle()
+	.fill(Color.orange)
+	.frame(width: 200, height: 200)
+
+    ZStack {
+       Rectangle().fill(Color.purple)
+	.frame(width: 300, height: 200)
+
+       Rectangle().fill(Color.yellow)
+	.frame(width: 300, height: 200)
+	.scaleEffect(0.8)
+
+       Rectangle()
+	.fill(Color.orange)
+	.frame(width: 300, height: 200)
+	.scaleEffect(0.6)
+    }
+
+    RoundedRectangle(cornerRadius: 120)
+
+    RoundedRectangle(cornerSize: CGSize(width: 100, height: 40)).frame(width: 300, height: 200)
+
+    RoundedRectangle(cornerRadius: 100, style: RoundedCornerStyle.continuous)
+
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/31Shape-Rectangle.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="32Shape-Path"> 第32节：32Shape-Path： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+Path { path in
+   path.move(to: CGPoint(x: 30, y: 0))
+   path.addLine(to: CGPoint(x: 30, y: 200))
+   path.addLine(to: CGPoint(x: 230, y: 200))
+    path.addLine(to: CGPoint(x: 230, y: 0))
+}
+
+Path { path in
+    path.addEllipse(in: CGRect(x: 100, y: 30, width: 200, height: 200))
+
+    path.addRoundedRect(in: CGRect(x: 100, y: 120, width: 200, height: 200), cornerSize: CGSize(width: 10, height: 10))
+
+    path.addEllipse(in: CGRect(x: 100, y: 210, width: 200, height: 200))
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/32Shape-Path.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="33GradientLinear"> 第33节：GradientLinear： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+Text("SwifUI Gradient")
+    .font(.system(size: 36))
+    .padding()
+    .foregroundColor(.white)
+    .background(LinearGradient(gradient: Gradient(colors: [.orange, .red, .purple]), startPoint: .topLeading, endPoint: .bottomTrailing))
+
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/33GradientLinear.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="34GradientAngular"> 第34节：GradientAngular： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+VStack{
+    Text("SwifUI Gradient")
+    .font(.system(size: 36))
+    .padding()
+    .foregroundColor(.white)
+    .background(AngularGradient(gradient: Gradient(colors: [.orange, .red, .purple]), center: UnitPoint(x: 0.5, y: 0.5), angle: Angle.init(degrees: -45)))
+
+    Text("SwifUI Gradient")
+    .font(.system(size: 36))
+    .padding()
+    .foregroundColor(.white)
+    .background(AngularGradient(gradient: Gradient(colors: [.orange, .red, .purple]), center: UnitPoint(x: 0.5, y: 0.5), startAngle: Angle.init(degrees: 0), endAngle: Angle.init(degrees: 0)))
+
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/34GradientAngular.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
+
+<h4 id="35GradientRadial"> 第35节：GradientRadial： </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+Text("SwifUI Gradient")
+    .font(.system(size: 36))
+    .padding()
+    .foregroundColor(.white)
+    .background(RadialGradient(gradient: Gradient(colors: [.orange, .red, .purple]), center: .init(x: 0.5, y: 0.5), startRadius: CGFloat(10), endRadius: CGFloat(120)))
+
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/35GradientRadial.png"/>
 </details>
 
 [<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
