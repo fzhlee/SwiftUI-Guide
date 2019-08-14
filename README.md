@@ -1,6 +1,6 @@
 # SwiftUI-Guide
 ![image](https://github.com/fzhlee/SwiftUI-Guide/blob/master/images/swiftui-logo.png)<br/>
-SwiftUI的80节教程及源码<br/>
+SwiftUI的86节教程及源码<br/>
 所有课程基于Xcode 11 beta5，并在Xcode 11 beta5上编译通过。<br/>
 当Xcode11正式版发布之后，会更新所有源码，以适配Xcode 11正式版。<br/>
 <br/>
@@ -13,7 +13,7 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
 <br/>
 ![image](https://github.com/fzhlee/SwiftUI-Guide/blob/master/images/SwiftUI.png)
 <br/>
-# 第一章 常用控件<br/>
+# 第一章 常用控件Controls<br/>
 ## 第一节：SwiftUI空白项目的创建步骤：<br/>
 1、打开Xcode，然后使用菜单命令:File > New > Project命令，打开项目创建窗口。<br/>
 2、在项目模板选择窗口中，选择Single View App模板，然后点击Next按钮，进入下一步设置窗口。<br/>
@@ -64,6 +64,8 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
   <li>例如，您可以编写需要包含文本字段的项目列表，然后描述每个字段的对齐方式，字体和颜色。</li>
   <li>您的代码比以前更简单，更易于阅读，从而节省您的时间和维护。</li>
 </ul>
+<br/>
+7、ContentView.swift代码说明：<br/>
 
 ```swift
 //导入SwiftUI框架
@@ -89,4 +91,80 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 #endif
+```
+
+8、SceneDelegate.swift代码说明：<br/>
+
+```swift
+//使用此方法可以选择性地配置UIWindow窗口，并将其附加到提供的UIWindowScene
+func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+
+        if let windowScene = scene as? UIWindowScene {
+	    //初始化一个UIWindow窗口对象
+            let window = UIWindow(windowScene: windowScene)
+	    // 使用一个UIHostingController实例，作为该窗口的根 view controller
+            window.rootViewController = UIHostingController(rootView: ContentView())
+	    // 将新建的窗口作为当前程序的窗口对象
+            self.window = window
+	    // 将窗口作为主窗口并显示
+            window.makeKeyAndVisible()
+        }
+    }
+```
+## 第二节：Text-BasicStyle：<br/>
+Text类似于UIKit中的UILabel，用于显示一行或多行的文字内容。<br/>
+示例代码：<br/>
+```swift
+VStack{
+    //Basic style
+    Text("www.hdjc8.com")
+	.bold()
+
+    Text("www.hdjc8.com")
+	.italic()
+
+    Text("www.hdjc8.com")
+	.underline()
+
+    Text("www.hdjc8.com")
+	.underline(true, color: .orange)
+
+    Text("www.hdjc8.com")
+	.strikethrough()
+
+    Text("www.hdjc8.com")
+	.strikethrough(true, color: .orange)
+
+    Text("www.hdjc8.com")
+	.foregroundColor(Color.orange)
+
+    Text("www.hdjc8.com")
+	.baselineOffset(CGFloat(5.0))
+	.background(Color.orange)
+
+     Text("www.hdjc8.com")
+	 .background(Image("Picture"), alignment: .bottom)
+
+    //Font
+    VStack{
+	Text("www.hdjc8.com")
+	    .font(.footnote)
+
+	Text("www.hdjc8.com")
+	    .font(.system(size: 36))
+
+	Text("www.hdjc8.com")
+	    .font(.system(.title, design: .monospaced))
+
+	Text("www.hdjc8.com")
+	    .font(.custom("BradleyHandITCTT-Bold", size: 36))
+
+	Text("www.hdjc8.com")
+	    .fontWeight(Font.Weight.heavy)
+
+	Text("www.hdjc8.com")
+	    .fontWeight(Font.Weight.ultraLight)
+
+    }
+}
 ```
