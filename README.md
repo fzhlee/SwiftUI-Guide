@@ -21,3 +21,59 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
 4、SwiftUI项目创建完成之后，其项目结构和代码功能如下图所示：<br/>
 ![image](https://github.com/fzhlee/SwiftUI-Guide/blob/master/images/SwiftUIXcode.png) 
 <br/>
+5、项目导航区：<br/>
+
+<table>
+	<thead>
+		<tr>
+			<th>文件名称</th>
+			<th>说明</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>AppDelegate.swift</td>
+			<td>提供didFinishLaunchingWithOptions等方法，用来处理程序启动之后的事件，或者响应来自外部的事件。</td>
+		</tr>
+		<tr>
+			<td>SceneDelegate.swift</td>
+			<td>设置应用程序窗口的rootViewController，并指定使用哪个ContentView作为rootViewController的rootView。</td>
+		</tr>
+		<tr>
+			<td>ContentView.swift</td>
+			<td>项目的初始界面，用户界面上的可视控件可以放置在此文件中。</td>
+		</tr>
+		<tr>
+			<td>Assets.xcassets</td>
+			<td>项目的资源文件，您可以在此处放置项目中所需的图片、颜色等资源。</td>
+		</tr>
+		<tr>
+			<td>LaunchScreen.storyboard</td>
+			<td>用来配置项目启动过程中所显示的内容。</td>
+		</tr>
+		<tr>
+			<td>Info.plist</td>
+			<td>项目的配置属性文件，配置产品名称、版本号、Build号、Bundle Identifier等项目。</td>
+		</tr>
+	</tbody>
+</table>
+
+6、代码编辑器：<br/>
+	SwiftUI使用声明性语法，因此您可以简单地说明您的用户界面应该做什么。 <br/>例如，您可以编写需要包含文本字段的项目列表，然后描述每个字段的对齐方式，字体和颜色。 <br/>您的代码比以前更简单，更易于阅读，从而节省您的时间和维护。<br/>
+```
+import SwiftUI 		             //导入SwiftUI框架
+
+struct ContentView: View {		 //定义一个名为ContentView的结构体，
+    var body: some View {
+        Text("Hello World")
+    }
+}
+
+#if DEBUG
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+#endif
+```
