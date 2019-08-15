@@ -2713,3 +2713,380 @@ struct ContentView : View {
 </details>
 
 [<img width="89" src="images/topIcon.png"/>](#Chapter4)
+
+
+# 第五章 布局Layout<br/>
+<h4 id="1NavigationLink"> 第1节：NavigationLink </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    @State var isPresented = false
+    var body: some View {
+//            NavigationView {
+//                HStack{
+//                    NavigationLink(destination: Text("Detail Page #1") ) {
+//                        Text("Go detail Page #1 >")
+//                    }
+//                    .navigationBarTitle("Index Page #1")
+//                    .accentColor(Color.orange)
+//                }
+//            }
+        
+            NavigationView {
+                HStack{
+                    NavigationLink(destination: MyDetailView(message: "Detail Page #2") ) {
+                        Text("Go detail Page #2 >")
+                    }
+                    .navigationBarTitle("Index Page #1")
+                }
+            }
+            
+    }
+}
+
+struct MyDetailView: View {
+    
+    let message: String
+
+    var body: some View {
+        VStack {
+            Text(message)
+                .font(.largeTitle)
+        }
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/1NavigationLink.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter5)
+
+
+<h4 id="2NavigationLinkAndGoBack"> 第2节：NavigationLinkAndGoBack </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    @State private var isPresented = false
+    
+    var body: some View {
+        
+//            NavigationView{
+//                VStack{
+//                Image("Picture").onTapGesture {
+//                    self.isPresented.toggle()
+//                    print(self.isPresented)
+//                }
+//                NavigationLink(destination: Text("< Go back").onTapGesture {
+//                    self.isPresented.toggle()
+//                }, isActive: $isPresented) {
+//                    Text("ddd")
+//                }
+//            }
+        
+        NavigationView{
+            VStack{
+                NavigationLink(destination: DetailView(preView: self), isActive: $isPresented) {
+                    Image("logo").renderingMode(.original)
+                    Text("Next Page >")
+                }
+            }
+        }
+    }
+    
+    func toggleValue()
+    {
+        self.isPresented.toggle()
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/2NavigationLinkAndGoBack.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter5)
+
+
+<h4 id="3PageNavigation"> 第3节：PageNavigation </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+import SwiftUI
+
+struct InfoModel : Hashable {
+    var description : String
+    var pictureName : String
+}
+struct ContentView : View {
+    
+    var messages : [InfoModel]
+    
+    var body: some View {
+        return NavigationView{
+            List{
+                ForEach(messages, id: \.self) { message in
+                    NavigationLink(destination: DetailView(imageName: message.pictureName)) {
+                        Text(message.description)
+                    }
+                }
+            }.navigationBarTitle("Picture List")
+        }
+    }
+}
+struct DetailView : View {
+    var imageName : String
+    var body: some View{
+        Image(imageName)
+    }
+}
+#if DEBUG
+struct ContentView_Previews : PreviewProvider {
+    static var previews: some View {
+        let model1 = InfoModel(description: "A lady with a horse", pictureName: "Picture1")
+        let model2 = InfoModel(description: "An African animal with a very long neck", pictureName: "Picture2")
+        return ContentView(messages: [model1, model2])
+    }
+}
+#endif
+
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/3PageNavigation.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter5)
+
+
+<h4 id="4ObjectBinding"> 第4节：ObjectBinding </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+class UserModel: ObservableObject {
+    @Published var nickName: String = ""
+}
+
+struct ContentView : View {
+    @ObservedObject var model = UserModel()
+    @State var isPresented = false
+
+    let dismiss = Alert.Button.default(Text("OK")) {}
+    var alert: Alert {
+        Alert(title: Text("Your nickname"),
+             message: Text("\(self.model.nickName)"),
+             dismissButton: dismiss)
+    }
+    
+    var body: some View {
+        VStack {
+            TextField("Your nickname", text: $model.nickName)
+            .padding()
+            
+            Button(action: {
+                self.isPresented = true
+            }) {
+                Text("Show")
+            }.alert(isPresented: $isPresented) { () -> Alert in
+                alert
+            }
+        }
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/4ObjectBinding.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter5)
+
+
+<h4 id="5EnviromentObject"> 第5节：EnviromentObject </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+import SwiftUI
+
+class UserModel: ObservableObject {
+    @Published var nickName: String = ""
+}
+
+struct ContentView : View {
+    
+    @EnvironmentObject var model : UserModel
+    @State var isPresented = false
+    
+    var body: some View {
+        NavigationView {
+
+            VStack{
+                TextField("Your nickname", text: $model.nickName)
+                .padding()
+                
+                NavigationLink(destination: DetailView()) {
+                    Text("Show Detail")
+                }
+            }
+        }
+    }
+}
+
+#if DEBUG
+struct ContentView_Previews : PreviewProvider {
+    static var previews: some View {
+        let model = UserModel()
+        model.nickName = "Super man"
+        return ContentView().environmentObject(model)
+    }
+}
+#endif
+
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/5EnviromentObject.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter5)
+
+
+<h4 id="6Show_Modal"> 第6节：Show_Modal </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    @State var isPresented = false
+
+    var modalView: some View {
+        Text("The Modal View")
+            .font(.system(size: 48))
+            .bold()
+    }
+
+    var body: some View {
+        Button("Show Modal View") {
+            self.isPresented = true
+        }.sheet(isPresented: $isPresented, content: {
+            self.modalView
+        })
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/6Show_Modal.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter5)
+
+
+<h4 id="7Show-Alert"> 第7节：Show-Alert </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+        @State var isAlert = false
+
+        let primaryButton = Alert.Button.default(Text("Yes")) {
+            print("Yes, I'm a student.")
+        }
+    
+        let secondaryButton = Alert.Button.destructive(Text("No")) {
+            print("No, I'm not a student.")
+        }
+        
+        var alert: Alert {
+            Alert(title: Text("Question"),
+                  message: Text("Are you a student?"),
+                  primaryButton: primaryButton,
+                  secondaryButton: secondaryButton)
+        }
+
+        var body: some View {
+            VStack {
+                Button("Alert Sheet") {
+                    self.isAlert = true
+                }
+            }.alert(isPresented: $isAlert, content: {
+                alert
+            })
+
+        }
+    }
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/7Show-Alert.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter5)
+
+
+<h4 id="8Show-ActionSheet"> 第8节：Show-ActionSheet </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    @State var isPresented = false
+
+    var myActionSheet: ActionSheet {
+        ActionSheet(title: Text("Information"),
+            message: Text("What's your favorite?"),
+            buttons: [
+                .default(Text("Fishing")) {
+                    print("---I like fishing")
+                },
+                .destructive(Text("Hunting")) {
+                    print("---I like hunting")
+                },
+                .cancel({
+                    print("---Nothing")
+                })
+            ]
+        )
+    }
+
+    var body: some View {
+        VStack {
+            Button("Show action sheet") {
+                self.isPresented = true
+            }
+        }
+        .actionSheet(isPresented: $isPresented, content: {
+            myActionSheet
+        })
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/8Show-ActionSheet.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter5)
+
