@@ -1842,3 +1842,247 @@ struct ContentView : View {
 
 [<img width="89" src="images/topIcon.png"/>](#Chapter2)
 
+
+# 第三章 手势Gesture<br/>
+<h4 id="1TapGesture+Singletap"> 第1节：TapGesture+Single tap </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    @State var isPressed = false
+    
+    var body: some View {
+        let tapGesture = TapGesture()
+            .onEnded { _ in
+                self.isPressed.toggle()
+        }
+        
+        return Circle()
+            .fill(Color.orange)
+            .frame(width: 240, height: 240)
+            .gesture(tapGesture)
+            .scaleEffect(isPressed ? 1.4 : 1)
+            .animation(.default)
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/1TapGesture+Singletap.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter2)
+
+<h4 id="2TapGesture+Doubletap"> 第2节：TapGesture+Double tap </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    @State var isPressed = false
+    
+    var body: some View {
+        
+        return Circle()
+            .fill(Color.orange)
+            .frame(width: 240, height: 240)
+            .scaleEffect(isPressed ? 1.4 : 1)
+            .animation(.default)
+            .onTapGesture(count: 2) {
+                self.isPressed.toggle()
+                print("Double tap.")
+        }
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/2TapGesture+Doubletap.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter2)
+
+<h4 id="3LongPressGesture"> 第3节：LongPressGesture </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    @GestureState var isLongPressed = false
+    
+    var body: some View {
+        let longPressGesture = LongPressGesture()
+            .updating($isLongPressed) { value, state, transcation in
+                print(value, state, transcation)
+                state = value
+            }
+            .onEnded { (value) in
+                print(value)
+            }
+        
+        return Circle()
+            .fill(Color.orange)
+            .frame(width: 240, height: 240)
+            .gesture(longPressGesture)
+            .scaleEffect(isLongPressed ? 1.4 : 1)
+            .animation(.default)
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/3LongPressGesture.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter2)
+
+<h4 id="4RotationGesture"> 第4节：RotationGesture </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    @State var angle = 0.0
+    
+    var body: some View {
+        let rotationGesture = RotationGesture(minimumAngleDelta: Angle.init(degrees: 20))
+            .onChanged({ (angle) in
+                
+                self.angle += angle.animatableData
+            }).onEnded { (angle) in
+                print(self.angle)
+        }
+        
+        return Image("logo")
+            .gesture(rotationGesture)
+            .rotationEffect(Angle.init(degrees: self.angle))
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/4RotationGesture.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter2)
+
+<h4 id="5DragGesture"> 第5节：DragGesture </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    @State var offset: CGSize = .zero
+    
+    var body: some View {
+        let dragGesture = DragGesture()
+            .onChanged { (value) in
+                print(value.startLocation, value.location, value.translation)
+                self.offset = value.translation
+            }
+            .onEnded { (value) in
+                if(abs(value.translation.width) >= 40 || abs(value.translation.height - (-260)) >= 40){
+                    self.offset = .zero
+                }
+                else{
+                    self.offset = CGSize(width: 0, height: -260)
+                }
+            }
+        
+        return VStack{
+            Circle()
+                .fill(Color.black)
+                .opacity(0.1)
+                .frame(width: 200, height: 200)
+                .offset(CGSize(width: 0, height: -50))
+            
+            Circle()
+                .fill(Color.orange)
+                .frame(width: 200, height: 200)
+                .offset(offset)
+                .gesture(dragGesture)
+                .animation(.spring())
+        }
+        
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/5DragGesture.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter2)
+
+<h4 id="6LongPressGestureAndDragGesture"> 第6节：LongPressGestureAndDragGesture </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    @State var offset: CGSize = .zero
+    @GestureState var isLongPressed = false
+    
+    var body: some View {
+        let longPressGesture = LongPressGesture()
+            .updating($isLongPressed) { value, state, transcation in
+                print(value, state, transcation)
+                state = value
+        }
+        .onEnded { (value) in
+            print(value)
+        }
+        
+        let dragGesture = DragGesture()
+            .onChanged { (value) in
+                print(value.startLocation, value.location, value.translation)
+                self.offset = value.translation
+        }
+        .onEnded { (value) in
+            if(abs(value.translation.width) >= 40 || abs(value.translation.height - (-260)) >= 40){
+                self.offset = .zero
+            }
+            else{
+                self.offset = CGSize(width: 0, height: -260)
+            }
+        }
+        .simultaneously(with: longPressGesture)
+        
+        return VStack{
+            Circle()
+                .fill(Color.black)
+                .opacity(0.1)
+                .frame(width: 200, height: 200)
+                .offset(CGSize(width: 0, height: -50))
+            
+            Circle()
+                .fill(Color.orange)
+                .frame(width: 200, height: 200)
+                .offset(offset)
+                .gesture(dragGesture)
+                .scaleEffect(isLongPressed ? 1.4 : 1)
+                .animation(.spring())
+        }
+        
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/6LongPressGestureAndDragGesture.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter2)
