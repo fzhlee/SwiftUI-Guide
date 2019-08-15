@@ -77,7 +77,7 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
 	- [35GradientRadial](#35GradientRadial)
 	<br/>
 
-* <span id="Image_D">第二章: Animation动画</span>
+* <span id="Chapter2">第二章: Animation动画</span>
 	- [1scaleEffect+default](#1scaleEffect+default)
 	- [2Opacity+linear](#2Opacity+linear)
 	- [3Offset+easeOut](#3Offset+easeOut)
@@ -1499,8 +1499,8 @@ Text("SwifUI Gradient")
 [<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
 
 # 第二章 动画Animation<br/>
-<h4 id="1scaleEffect+default"> 第1节：1scaleEffect+default </h4>
-使用RadialGradient绘制径向颜色渐变的背景。<br/>
+<h4 id="1scaleEffect+default"> 第1节：scaleEffect+default </h4>
+<br/>
 示例代码：<br/>
 
 ```swift
@@ -1533,5 +1533,311 @@ struct ContentView : View {
 <img width="100%" src="images/1scaleEffect+default.gif"/>
 </details>
 
-[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+[<img width="89" src="images/topIcon.png"/>](#Chapter2)
+
+<h4 id="2Opacity+linear"> 第2节：Opacity+linear </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    @State var factor: Double = 1
+    @State var alpha: Double = 1
+
+    var body: some View {
+        Image("logo")
+            .scaleEffect(CGFloat(factor))
+            .opacity(alpha)
+            .onTapGesture {
+                withAnimation(.linear(duration: 1.0)) {
+                    self.factor += 0.1
+                    self.alpha -= 0.2
+                }
+            }
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/2Opacity+linear.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter2)
+
+
+<h4 id="3Offset+easeOut"> 第3节：Offset+easeOut </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    @State var distance: Double = 0
+
+    var body: some View {
+        VStack{
+            Image("logo")
+                .offset(x: 0, y: CGFloat(distance))
+                .animation(.easeOut(duration: 2))
+            
+            Divider().fixedSize()
+            
+            Button(action: {
+                self.distance -= 120
+            }) {
+                Text("Move Effect")
+            }
+            
+        }
+        
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/3Offset+easeOut.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter2)
+
+<h4 id="4RotationEffect+spring"> 第4节：RotationEffect+spring </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    @State var angle: Double = 0
+
+    var body: some View {
+        VStack{
+            Image("logo")
+            .rotationEffect(Angle.init(degrees: angle))
+            .animation(.spring())
+            
+            Divider().fixedSize()
+            
+            Button(action: {
+                self.angle += 90
+            }) {
+                Text("Rotation Effect")
+            }
+        }
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/4RotationEffect+spring.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter2)
+
+<h4 id="5CombinedAnimation"> 第5节：CombinedAnimation</h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    @State var radius: Double = 0
+    @State var brightness: Double = 0
+
+    var body: some View {
+        VStack{
+            Image("logo")
+                .shadow(radius: CGFloat(radius))
+                .brightness(brightness)
+                .animation(.linear(duration: 2))
+            
+            Divider().fixedSize()
+            
+            Button(action: {
+                self.radius += 10
+                self.brightness = 1
+            }) {
+                Text("Move Effect")
+            }
+            
+        }
+        
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/5CombinedAnimation.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter2)
+
+<h4 id="6SpeadAndDelay"> 第6节：SpeadAndDelay </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    @State var factor: Double = 1.0
+    
+    var animation: Animation {
+        Animation.linear(duration: 1)
+//            .speed(1)
+//            .speed(5)
+            .delay(2)
+    }
+
+    var body: some View {
+        VStack{
+            Image("logo")
+            .scaleEffect(CGFloat(factor))
+            .animation(animation)
+            
+            Divider().fixedSize()
+            
+            Button(action: {
+                self.factor += 0.2
+            }) {
+                Text("Zoom In Effect")
+            }
+        }
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/6SpeadAndDelay.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter2)
+
+<h4 id="7Repeating"> 第7节：Repeating </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    @State var angle: Double = 0
+    
+    var animation: Animation {
+        Animation.spring()
+             .repeatForever()
+//            .repeatForever(autoreverses: false)
+//            .repeatCount(3)
+    }
+
+    var body: some View {
+        VStack{
+            Image("logo")
+                .rotationEffect(Angle.init(degrees: angle))
+                .animation(animation)
+            
+            Divider().fixedSize()
+            
+            Button(action: {
+                self.angle += 45
+            }) {
+                Text("Repeat Forever Effect")
+            }
+        }
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/7Repeating.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter2)
+
+<h4 id="8ToggleVisibility"> 第8节：ToggleVisibility </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    @State var showingPassword = false
+    @State var password = ""
+
+    var body: some View {
+        
+        VStack {
+            Toggle(isOn: $showingPassword.animation(.spring())) {
+                Text("Toggle Password")
+            }
+
+            if showingPassword {
+                TextField("Password", text: $password)
+                    .padding()
+                    .border(Color.green, width: 1)
+            }
+        }
+        .padding()
+    }
+}
+
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/8ToggleVisibility.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter2)
+
+<h4 id="9AsymmetricTransition"> 第9节：AsymmetricTransition </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    @State var showPicture = false
+
+    var body: some View {
+        VStack {
+            Button(action: {
+                withAnimation {
+                    self.showPicture.toggle()
+                }
+            }) {
+                Text("Show picture")
+            }
+
+            if showPicture {
+//                Image("logo")
+                
+//                Image("logo")
+//                    .transition(.move(edge: .top))
+                
+//                Image("logo")
+//                    .transition(.scale(scale: 0))
+                
+//                Image("logo")
+//                    .transition(.slide)
+                
+//                Image("logo")
+//                    .transition(.asymmetric(insertion: .scale(scale: 0), removal: .slide))
+                
+                Image("logo")
+                    .transition(AnyTransition.scale(scale: 0).combined(with:.slide))
+            }
+        }
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/9AsymmetricTransition.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter2)
 
