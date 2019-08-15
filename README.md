@@ -3090,3 +3090,448 @@ struct ContentView : View {
 
 [<img width="89" src="images/topIcon.png"/>](#Chapter5)
 
+
+# 第六章 更多...<br/>
+<h4 id="1PreviewInNavigationView"> 第1节：PreviewInNavigationView </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    var body: some View {
+        VStack{
+            Image("SwiftUI")
+            .navigationBarTitle("About SwiftUI")
+            Text("SwiftUI is an innovative, exceptionally simple way to build user interfaces across all Apple platforms with the power of Swift. Build user interfaces for any Apple device using just one set of tools and APIs. With a declarative Swift syntax that’s easy to read and natural to write, SwiftUI works seamlessly with new Xcode design tools to keep your code and design perfectly in sync. Automatic support for Dynamic Type, Dark Mode, localization, and accessibility means your first line of SwiftUI code is already the most powerful UI code you’ve ever written.")
+            .padding()
+        }
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/1PreviewInNavigationView.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter6)
+
+<h4 id="2Background"> 第2节：Background </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    var body: some View {
+        
+        VStack{
+            
+            Spacer()
+            
+            Text("SwiftUI Tutorials")
+                .font(.largeTitle)
+                .padding()
+                .background(Color.orange)
+            
+            Spacer()
+            
+            Text("SwiftUI Tutorials")
+            .font(.largeTitle)
+            .padding()
+            .background(Image("iPhoneSerial")
+                .resizable())
+            
+            Spacer()
+            
+            Text("SwiftUI Tutorials")
+                .font(.largeTitle)
+                .padding()
+                .background(Circle()
+                    .fill(Color.orange)
+                    .frame(width: 280, height: 280))
+            
+            Spacer()
+            
+        }
+
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/2Background.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter6)
+
+<h4 id="3SizeCategory"> 第3节：SizeCategory </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    var body: some View {
+        VStack{
+            Text("Dynamic Type sizes")
+                .font(.system(size: 36))
+            Text("Dynamic Type sizes")
+        }
+        
+    }
+}
+
+#if DEBUG
+struct ContentView_Previews : PreviewProvider {
+    static var previews: some View {
+        VStack{
+            
+            Spacer()
+            ContentView()
+                .environment(\.sizeCategory, .extraSmall)
+            Spacer()
+            ContentView()
+            Spacer()
+
+            ContentView()
+               .environment(\.sizeCategory, .accessibilityExtraExtraExtraLarge)
+            
+            Spacer()
+        }
+        
+    }
+}
+#endif
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/3SizeCategory.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter6)
+
+<h4 id="4PreviewDevice"> 第4节：PreviewDevice </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    var body: some View {
+        VStack{
+            Text("Dynamic Type sizes")
+                .font(.system(size: 48))
+            Text("Dynamic Type sizes")
+        }
+        
+    }
+}
+
+#if DEBUG
+struct ContentView_Previews : PreviewProvider {
+    static var previews: some View {
+        Group {
+           ContentView()
+              .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+              .previewDisplayName("Device-8")
+
+           ContentView()
+              .previewDevice(PreviewDevice(rawValue: "iPhone XS Max"))
+              .previewDisplayName("Device-XS Max")
+        }
+    }
+}
+#endif
+
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/4PreviewDevice.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter6)
+
+<h4 id="5ViewAsProperties"> 第5节：ViewAsProperties </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    let icon = Image(systemName: "book.fill")
+    let title = Text("Interactive Tutorials")
+    let flag = Image(systemName: "icloud.and.arrow.down")
+    
+    var body: some View {
+        HStack(alignment: .bottom, spacing: 40){
+            icon
+            title
+            Spacer()
+            flag
+        }
+        .padding()
+    }
+}
+
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/5ViewAsProperties.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter6)
+
+<h4 id="6onAppear-onDisappear"> 第6节：onAppear-onDisappear </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct DetailView: View {
+    var body: some View {
+        Text("Detail")
+        .onAppear {
+            print("DetailView appeared!")
+        }.onDisappear {
+            print("DetailView disappeared!")
+        }
+    }
+}
+
+struct ContentView : View {
+    
+    @State private var isPresented = false
+    
+    var body: some View
+    {
+        Text("Show Detail > ").sheet(isPresented: $isPresented, content: {
+            DetailView()
+        }).onTapGesture {
+            self.isPresented = true
+        }.onDisappear {
+            print("ContentView disappeared!")
+        }.onAppear {
+            print("ContentView appeared!")
+        }
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/6onAppear-onDisappear.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter6)
+
+<h4 id="7ColorScheme-LightAndDark"> 第7节：ColorScheme-LightAndDark </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    var body: some View {
+        VStack(alignment: .center, spacing: 20){
+            Text("Dynamic Type sizes")
+                .font(.system(size: 48))
+                .foregroundColor(Color.secondary)
+            Text("Dynamic Type sizes")
+                .foregroundColor(Color.accentColor)
+            Image(systemName: "star.fill")
+                .foregroundColor(Color.secondary)
+                .font(.system(size: 64))
+        }
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+        .background(Color.primary)
+        .edgesIgnoringSafeArea(.all)
+        
+    }
+}
+
+#if DEBUG
+struct ContentView_Previews : PreviewProvider {
+    static var previews: some View {
+        HStack {
+           ContentView()
+              .environment(\.colorScheme, .light)
+
+           ContentView()
+              .environment(\.colorScheme, .dark)
+        }
+        
+    }
+}
+#endif
+
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/7ColorScheme-LightAndDark.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter6)
+
+<h4 id="8AnyView"> 第8节：AnyView </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    private var randomBool = Bool.random()
+    
+//    var body: some View {
+//        Group {
+//            if randomBool {
+//                Text("Hi, you get the gift.")
+//                    .font(.system(size: 32))
+//            } else {
+//                Text("Sorry, you miss the gift.")
+//                    .font(.system(size: 32))
+//            }
+//        }
+//    }
+    
+//    var body: some View {
+//        if randomBool {
+//            return Text("Hi, you get the gift.")
+//                .font(.system(size: 32))
+//        } else {
+//            return Text("Sorry, you miss the gift.")
+//                .font(.system(size: 32))
+//        }
+//    }
+    
+    var body: AnyView {
+        if randomBool {
+            return AnyView(Image(systemName: "star.fill").font(.system(size: 72)))
+        } else {
+            return AnyView(Text("Sorry, you miss the gift.").font(.system(size: 32)))
+        }
+    }
+}
+
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/8AnyView.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter6)
+
+<h4 id="9NavigationBarTitle"> 第9节：NavigationBarTitle </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+
+    var body: some View {
+        NavigationView {
+            
+//            Text("SwiftUI's NavigationView")
+            
+//            Text("SwiftUI's NavigationView")
+//                .navigationBarTitle(Text("SwiftUI"))
+            
+//            Text("SwiftUI's NavigationView")
+//                .navigationBarTitle(Text("SwiftUI"), displayMode: .large)
+            
+            Text("SwiftUI's NavigationView")
+                .navigationBarTitle(Text("SwiftUI"), displayMode: .inline)
+        }
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/9NavigationBarTitle.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter6)
+
+<h4 id="10NavigationItem"> 第10节：NavigationItem </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct TrailingButtons : View{
+    var body: some View {
+        HStack{
+            Button(action: {
+                print("Download the data")
+            }) {
+                Image(systemName: "icloud.and.arrow.down.fill")
+            }
+            Button(action: {
+                print("Edit the data")
+            }) {
+                Image(systemName: "pencil.tip.crop.circle")
+            }
+        }
+    }
+}
+
+struct ContentView : View {
+
+    var body: some View {
+        NavigationView {
+            Text("SwiftUI's NavigationView")
+                .navigationBarTitle(Text("SwiftUI"))
+                .navigationBarItems(leading:  Button(action: {
+                       print("Go to index page")
+                   }) {
+                       Text("Index")
+                   }, trailing: TrailingButtons())
+        }
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/10NavigationItem.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter6)
+
+<h4 id="11ViewModifier"> 第11节：ViewModifier </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    var body: some View {
+        VStack(alignment: .center, spacing: 40){
+            Image("avarta1").modifier(myImageStyle())
+            Image("avarta2").modifier(myImageStyle())
+            Image("avarta3").modifier(myImageStyle())
+        }
+        .padding()
+    }
+}
+
+struct myImageStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(width: 200, height: 200, alignment: .leading)
+            .cornerRadius(100)
+            .clipped()
+            .saturation(0.0)
+    }
+}
+
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/11ViewModifier.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter6)
