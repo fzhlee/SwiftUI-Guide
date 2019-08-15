@@ -1498,3 +1498,40 @@ Text("SwifUI Gradient")
 
 [<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
 
+# 第二章 动画Animation<br/>
+<h4 id="1scaleEffect+default"> 第1节：1scaleEffect+default </h4>
+使用RadialGradient绘制径向颜色渐变的背景。<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    @State var factor: CGFloat = 1
+
+    var body: some View {
+        
+        VStack{
+            Image("logo")
+                .scaleEffect(factor)
+                .animation(.default)
+            
+            Divider().fixedSize()
+            
+            Button(action: {
+                self.factor += 0.2
+            }) {
+                Text("Zoom in")
+            }
+        }
+    }
+}
+
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/1scaleEffect+default.gif"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
+
