@@ -1,6 +1,6 @@
-# SwiftUI-Guide
-![image](https://github.com/fzhlee/SwiftUI-Guide/blob/master/images/swiftui-logo.png)<br/>
-图片来源：developer.apple.com
+
+![image](images/GithubSwiftUICover.png)<br/>
+
 <br/><br/>
 **SwiftUI<br/>
 更好的应用，更少的代码。<br/>
