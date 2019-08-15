@@ -36,7 +36,7 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
 <br/>
 图片来源：developer.apple.com<br/>
 
-## 示例导航区：
+## 课程章节导航区：
 
 * <span id="ExampleNavigator">第一章: 常用的Views</span>
 	- [First Project](#1FirstProject)
