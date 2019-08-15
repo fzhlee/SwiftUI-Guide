@@ -1184,7 +1184,7 @@ struct ContentView : View {
 
 
 <h4 id="26Toggle"> 第26节：Toggle： </h4>
-<br/>
+Toggle相当于UIKit中的UIToggle，用于实现选项开关(开户或关闭)的功能。<br/>
 示例代码：<br/>
 
 ```swift
@@ -1216,7 +1216,7 @@ struct ContentView : View {
 
 
 <h4 id="27TabView"> 第27节：TabView： </h4>
-<br/>
+TabView相当于UIKit中的UITabBarController，用于实现标签视图集。<br/>
 示例代码：<br/>
 
 ```swift
@@ -1248,8 +1248,8 @@ var body: some View {
 [<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
 
 
-<h4 id="28Webview"> 第28节：Webview： </h4>
-<br/>
+<h4 id="28Webview"> 第28节：使用UIKit中的Webview： </h4>
+SwiftUI并没有包含WebView，这里通过遵循UIViewRepresentable协议，在SwiftUI中集成UIKit中的WKWebView。<br/>
 示例代码：<br/>
 
 ```swift
@@ -1278,7 +1278,7 @@ struct ContentView : UIViewRepresentable {
 
 
 <h4 id="29MapView"> 第29节：MapView： </h4>
-<br/>
+SwiftUI并没有包含MapView，这里通过遵循UIViewRepresentable协议，在SwiftUI中集成UIKit中的WKMapView。<br/>
 示例代码：<br/>
 
 ```swift
@@ -1312,7 +1312,7 @@ struct ContentView : UIViewRepresentable {
 
 
 <h4 id="30Shape-Circle"> 第30节：Shape-Circle： </h4>
-<br/>
+使用Circle绘制圆，并设置圆形的填充颜色、显示区域等属性。<br/>
 示例代码：<br/>
 
 ```swift
@@ -1355,7 +1355,7 @@ VStack{
 
 
 <h4 id="31Shape-Rectangle"> 第31节：Shape-Rectangle： </h4>
-<br/>
+使用Rectangle绘制矩形，使用RoundedRectangle绘制圆角矩形。<br/>
 示例代码：<br/>
 
 ```swift
@@ -1398,7 +1398,7 @@ VStack{
 
 
 <h4 id="32Shape-Path"> 第32节：32Shape-Path： </h4>
-<br/>
+使用Path，并配合move和addLine绘制自定义的图形<br/>
 示例代码：<br/>
 
 ```swift
@@ -1426,8 +1426,8 @@ Path { path in
 [<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
 
 
-<h4 id="33GradientLinear"> 第33节：GradientLinear： </h4>
-<br/>
+<h4 id="33GradientLinear"> 第33节：LinearGradien： </h4>
+使用LinearGradien绘制线形颜色渐变的背景。<br/>
 示例代码：<br/>
 
 ```swift
@@ -1448,8 +1448,8 @@ Text("SwifUI Gradient")
 [<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
 
 
-<h4 id="34GradientAngular"> 第34节：GradientAngular： </h4>
-<br/>
+<h4 id="34GradientAngular"> 第34节：AngularGradient： </h4>
+使用AngularGradient绘制角度颜色渐变的背景。<br/>
 示例代码：<br/>
 
 ```swift
@@ -1477,8 +1477,8 @@ VStack{
 [<img width="89" src="images/topIcon.png"/>](#ExampleNavigator)
 
 
-<h4 id="35GradientRadial"> 第35节：GradientRadial： </h4>
-<br/>
+<h4 id="35GradientRadial"> 第35节：RadialGradient： </h4>
+使用RadialGradient绘制径向颜色渐变的背景。<br/>
 示例代码：<br/>
 
 ```swift
