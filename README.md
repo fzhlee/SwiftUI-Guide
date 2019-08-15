@@ -1874,7 +1874,7 @@ struct ContentView : View {
 <img width="100%" src="images/1TapGesture+Singletap.gif"/>
 </details>
 
-[<img width="89" src="images/topIcon.png"/>](#Chapter2)
+[<img width="89" src="images/topIcon.png"/>](#Chapter3)
 
 <h4 id="2TapGesture+Doubletap"> 第2节：TapGesture+Double tap </h4>
 <br/>
@@ -1905,7 +1905,7 @@ struct ContentView : View {
 <img width="100%" src="images/2TapGesture+Doubletap.gif"/>
 </details>
 
-[<img width="89" src="images/topIcon.png"/>](#Chapter2)
+[<img width="89" src="images/topIcon.png"/>](#Chapter3)
 
 <h4 id="3LongPressGesture"> 第3节：LongPressGesture </h4>
 <br/>
@@ -1941,7 +1941,7 @@ struct ContentView : View {
 <img width="100%" src="images/3LongPressGesture.gif"/>
 </details>
 
-[<img width="89" src="images/topIcon.png"/>](#Chapter2)
+[<img width="89" src="images/topIcon.png"/>](#Chapter3)
 
 <h4 id="4RotationGesture"> 第4节：RotationGesture </h4>
 <br/>
@@ -1973,7 +1973,7 @@ struct ContentView : View {
 <img width="100%" src="images/4RotationGesture.gif"/>
 </details>
 
-[<img width="89" src="images/topIcon.png"/>](#Chapter2)
+[<img width="89" src="images/topIcon.png"/>](#Chapter3)
 
 <h4 id="5DragGesture"> 第5节：DragGesture </h4>
 <br/>
@@ -2023,7 +2023,7 @@ struct ContentView : View {
 <img width="100%" src="images/5DragGesture.gif"/>
 </details>
 
-[<img width="89" src="images/topIcon.png"/>](#Chapter2)
+[<img width="89" src="images/topIcon.png"/>](#Chapter3)
 
 <h4 id="6LongPressGestureAndDragGesture"> 第6节：LongPressGestureAndDragGesture </h4>
 <br/>
@@ -2085,4 +2085,4 @@ struct ContentView : View {
 <img width="100%" src="images/6LongPressGestureAndDragGesture.gif"/>
 </details>
 
-[<img width="89" src="images/topIcon.png"/>](#Chapter2)
+[<img width="89" src="images/topIcon.png"/>](#Chapter3)
