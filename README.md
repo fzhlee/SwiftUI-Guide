@@ -1,6 +1,6 @@
 
 ![image](images/GithubSwiftUICover2.png)<br/><br/>
-[English Version](README_English.md)
+[![image](images/USFlag.png)English Version](README_English.md)
 <br/><br/>
 **SwiftUI<br/>
 更好的应用，更少的代码。<br/>
