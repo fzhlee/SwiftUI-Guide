@@ -1498,7 +1498,7 @@ Text("SwifUI Gradient")
 
 # 第二章 动画Animation<br/>
 <h4 id="1scaleEffect+default"> 第1节：scaleEffect+default </h4>
-<br/>
+通过scaleEffect和Animation方法，实现default类型的缩放动画。<br/>
 示例代码：<br/>
 
 ```swift
@@ -1510,13 +1510,13 @@ struct ContentView : View {
         
         VStack{
             Image("logo")
-                .scaleEffect(factor)
-                .animation(.default)
+                .scaleEffect(factor)	//设置Image的缩放比例为factor
+                .animation(.default)	//给Image添加default类型的动画效果
             
             Divider().fixedSize()
             
             Button(action: {
-                self.factor += 0.2
+                self.factor += 0.2	//当按钮点击时增加Image的缩放比例
             }) {
                 Text("Zoom in")
             }
@@ -1534,7 +1534,7 @@ struct ContentView : View {
 [<img width="89" src="images/topIcon.png"/>](#Chapter2)
 
 <h4 id="2Opacity+linear"> 第2节：Opacity+linear </h4>
-<br/>
+通过scaleEffect、opacity和withAnimation方法，实现linear类型的缩放动画，并设置动画的时长为1秒。<br/>
 示例代码：<br/>
 
 ```swift
@@ -1566,7 +1566,7 @@ struct ContentView : View {
 
 
 <h4 id="3Offset+easeOut"> 第3节：Offset+easeOut </h4>
-<br/>
+通过offset、animation方法，实现easeOut类型的缩放动画，并设置动画的时长为2秒。<br/>
 示例代码：<br/>
 
 ```swift
