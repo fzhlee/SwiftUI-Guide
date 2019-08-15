@@ -90,7 +90,7 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
 	- [9AsymmetricTransition](#9AsymmetricTransition)
 	<br/>
 
-* <span id="Image_D">第三章: Gesture手势</span>
+* <span id="Chapter3">第三章: Gesture手势</span>
 	- [1TapGesture+Single tap](#1TapGesture+Singletap)
 	- [2TapGesture+Double tap](#2TapGesture+Doubletap)
 	- [3LongPressGesture](#3LongPressGesture)
@@ -99,7 +99,7 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
 	- [6LongPressGestureAndDragGesture](#6LongPressGestureAndDragGesture)
 	<br/>
 
-* <span id="Image_D">第四章: Layout布局</span>
+* <span id="Chapter4">第四章: Layout布局</span>
 	- [1Group](#1Group)
 	- [2HSTack](#2HSTack)
 	- [3VSTack](#3VSTack)
@@ -118,7 +118,7 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
 	- [16Form-ShowHide](#16Form-ShowHide)
 	<br/>
 
-* <span id="Image_D">第五章: DataFlow数据流</span>
+* <span id="Chapter5">第五章: DataFlow数据流</span>
 	- [1NavigationLink](#1NavigationLink)
 	- [2NavigationLinkAndGoBack](#2NavigationLinkAndGoBack)
 	- [3PageNavigation](#3PageNavigation)
@@ -129,7 +129,7 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
 	- [8Show-ActionSheet](#8Show-ActionSheet)
 	<br/>
 
-* <span id="Image_D">第六章: More更多</span>
+* <span id="Chapter6">第六章: More更多</span>
 	- [1PreviewInNavigationView](#1PreviewInNavigationView)
 	- [2Background](#2Background)
 	- [3SizeCategory](#3SizeCategory)
