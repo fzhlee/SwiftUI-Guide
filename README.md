@@ -2086,3 +2086,632 @@ struct ContentView : View {
 </details>
 
 [<img width="89" src="images/topIcon.png"/>](#Chapter3)
+
+# 第四章 布局Layout<br/>
+<h4 id="1Group"> 第1节：Group </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    var body: some View {
+        Group {
+            Text("Apple")
+            Text("Banana")
+            Text("Orange")
+            Text("Watermelon")
+            Text("Grape")
+            Text("Papaya")
+            Text("Pear")
+        }
+        .font(.title)
+        .foregroundColor(.orange)
+        .padding()
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/1Group.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter4)
+
+
+<h4 id="2HSTack"> 第2节：HSTack </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    var body: some View {
+        HStack(alignment: .bottom, spacing: 40){
+            Image(systemName: "book.fill")
+            Text("Interactive Tutorials")
+            Spacer()
+            Image(systemName: "icloud.and.arrow.down")
+        }
+        .padding()
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/2HSTack.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter4)
+
+
+<h4 id="3VSTack"> 第3节：VSTack </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    var body: some View {
+        VStack{
+            Text("The fruit and the tree")
+                .font(.largeTitle)
+            Image("Apple")
+            Text("An apple is a sweet, edible fruit produced by an apple tree Apple trees are cultivated worldwide and are the most widely grown species in the genus Malus.")
+                .font(.body)
+                .lineLimit(nil)
+                .frame(height: 200)
+        }.padding()
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/3VSTack.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter4)
+
+
+<h4 id="4ZSTack"> 第4节：ZSTack </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    var body: some View {
+        ZStack(alignment: .center){
+            Image("beach").clipShape(Circle())
+            Text("Sea beach")
+                .font(.system(size: 48))
+                .foregroundColor(.white)
+            Text("Hawaii - USA")
+                .font(.system(size: 14))
+                .foregroundColor(.white)
+                .offset(x: 0, y: 36)
+        }.padding(10)
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/4ZSTack.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter4)
+
+
+<h4 id="5List-Basic"> 第5节：List-Basic </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    @State var languages = ["Objective-C", "Swift", "Flutter"]
+
+            var body: some View {
+                
+                List{
+                    Text("Objective-C")
+                    Text("Swift")
+                    Text("Flutter")
+                }
+                
+//                List(0..<5) { item in
+//                    Text("Item : \(item)")
+//                }
+                
+//                ForEach(languages, id: \.self) { language in
+//                    Text(language)
+//                }
+            }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/5List-Basic.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter4)
+
+
+<h4 id="6List-Insert"> 第6节：List-Insert </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    
+    @State var languages = ["Objective-C", "Swift", "Flutter"]
+
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(languages, id:\.self) { language in
+                    Text(language)
+                }.onInsert(of: ["demo"], perform: { (offset, message) in
+                    print(offset)
+                })
+            }
+            .navigationBarTitle(Text("Edit Row"), displayMode: .large)
+            .navigationBarItems(trailing: EditButton())
+        }.padding()
+    }
+
+    func insertItem(to offsets: Int, message : [NSItemProvider]) {
+        languages.insert(message[0].description, at: offsets)
+    }
+    
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/6List-Insert.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter4)
+
+
+<h4 id="7List-Delete"> 第7节：List-Delete </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+
+        @State var languages = ["Objective-C", "Swift", "Flutter"]
+
+        var body: some View {
+            NavigationView {
+                List {
+                    ForEach(languages,id: \.self) { language in
+                        Text(language)
+                    }
+                    .onDelete(perform: delete)
+                }
+                .navigationBarItems(trailing: EditButton())
+            }
+        }
+
+        func delete(at offsets: IndexSet) {
+            if let first = offsets.first {
+                languages.remove(at: first)
+            }
+        }
+    }
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/7List-Delete.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter4)
+
+
+<h4 id="8List-Move"> 第8节：List-Move </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    @State var languages = ["Objective-C", "Swift", "Flutter"]
+
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(languages,id: \.self) { language in
+                    Text(language)
+                }
+                .onMove { (source, destination) in
+                    self.languages.move(fromOffsets: source, toOffset: destination)
+                }
+            }
+            .navigationBarTitle(Text("Edit Row"), displayMode: .large)
+            .navigationBarItems(trailing: EditButton())
+        }
+    }
+
+    func moveItem(from source: IndexSet, to destination: Int) {
+        languages.move(fromOffsets: source, toOffset: destination)
+        print(languages)
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/8List-Move.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter4)
+
+
+<h4 id="9List-DeleteAndMove"> 第9节：List-DeleteAndMove </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    @State var languages = ["Objective-C", "Swift", "Flutter"]
+
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(languages, id: \.self) { language in
+                    Text(language)
+                }
+                .onDelete(perform: deleteItem)
+                .onMove(perform: moveItem)
+            }
+            .navigationBarTitle(Text("Edit Row"), displayMode: .large)
+            .navigationBarItems(trailing: EditButton())
+        }
+    }
+
+    func deleteItem(at offsets: IndexSet) {
+        if let first = offsets.first {
+            languages.remove(at: first)
+        }
+    }
+    
+    func moveItem(from source: IndexSet, to destination: Int) {
+        languages.move(fromOffsets: source, toOffset: destination)
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/9List-DeleteAndMove.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter4)
+
+
+<h4 id="10ScrollView-Vertical"> 第10节：ScrollView-Vertical </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    @State var languages = ["Objective-C", "Swift", "Flutter"]
+
+    var body: some View {
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(alignment: HorizontalAlignment.leading, spacing: 20){
+
+                    Text("Overview")
+                    .font(.system(size: 48))
+                    .padding(10)
+                    Text("With the power of Xcode, the ease of Swift, and the revolutionary features of cutting-edge Apple technologies, you have the freedom to create your most innovative apps ever.\nSwiftUI provides views, controls, and layout structures for declaring your app's user interface. The framework provides event handlers for delivering taps, gestures, and other types of input to your app, and tools to manage the flow of data from your app's models down to the views and controls that users will see and interact with.")
+                    .lineLimit(nil)
+                    .frame(width: 300, height: 240, alignment: .topLeading)
+                    .padding(10)
+                    
+                    Image("iPhone")
+                    .resizable()
+                    .frame(width: 300, height: 556, alignment: .center)
+                }
+            }
+            .background(Color.orange)
+            .padding(10)
+            .navigationBarTitle(Text("ScrollView"))
+        }
+    }
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/10ScrollView-Vertical.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter4)
+
+
+<h4 id="11ScrollView-Horizontal"> 第11节：ScrollView-Horizontal </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    @State var languages = ["Objective-C", "Swift", "Flutter"]
+
+    var body: some View {
+            ScrollView(.horizontal, showsIndicators: true) {
+                HStack(alignment:.center, spacing: 20){
+
+                    Image("iPhone")
+                        .resizable()
+                        .frame(width: 300, height: 556, alignment: .center)
+
+                    Image("iPhoneSerial")
+                        .resizable()
+                        .frame(width: 823, height: 556, alignment: .center)
+
+                    Image("iPhone")
+                        .resizable()
+                        .frame(width: 300, height: 556, alignment: .center)
+                }
+            }
+            .background(Color.orange)
+            .padding(10)
+        }
+    }
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/11ScrollView-Horizontal.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter4)
+
+
+<h4 id="12ScrollView-VerticalAndHorizontal"> 第12节：ScrollView-VerticalAndHorizontal </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    @State var languages = ["Objective-C", "Swift", "Flutter"]
+
+    var body: some View {
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(alignment: HorizontalAlignment.leading, spacing: 20){
+
+                Text("Overview")
+                .font(.system(size: 48))
+                .padding(10)
+                Text("With the power of Xcode, the ease of Swift, and the revolutionary features of cutting-edge Apple technologies, you have the freedom to create your most innovative apps ever.\nSwiftUI provides views, controls, and layout structures for declaring your app's user interface. The framework provides event handlers for delivering taps, gestures, and other types of input to your app, and tools to manage the flow of data from your app's models down to the views and controls that users will see and interact with.")
+                .lineLimit(nil)
+                .frame(width: 300, height: 350, alignment: .topLeading)
+                .padding(10)
+                
+                ScrollView(.horizontal, showsIndicators: true) {
+                    HStack(alignment:.center, spacing: 20){
+
+                        Image("iPhone")
+                            .resizable()
+                            .frame(width: 189, height: 350, alignment: .center)
+
+                        Image("iPhoneSerial")
+                            .resizable()
+                            .frame(width: 518, height: 350, alignment: .center)
+
+                        Image("iPhone")
+                            .resizable()
+                            .frame(width: 189, height: 350, alignment: .center)
+                    }
+                }
+                .background(Color.orange)
+                .padding(10)
+            }
+        }
+        .background(Color.orange)
+        .padding(10)
+        .navigationBarTitle(Text("ScrollView"))
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/12ScrollView-VerticalAndHorizontal.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter4)
+
+
+<h4 id="13Form-Basic"> 第13节：Form-Basic </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+
+    private var languages = ["Swift", "Objective-C"]
+    @State private var selectedLanguage = 0
+    @State var workingYear: Double = 2
+    @State var enableNotification = false
+
+    var body: some View {
+        NavigationView {
+            Form {
+                Picker(selection: $selectedLanguage, label: Text("Languages")) {
+                   ForEach(0 ..< languages.count) {
+                    Text(self.languages[$0]).tag($0)
+                   }
+                }.pickerStyle(SegmentedPickerStyle())
+                HStack{
+                    Text("Working years")
+                    Slider(value: $workingYear, in: 1...10, step: 1)
+                }
+                
+                Toggle(isOn: $enableNotification) {
+                    Text("Enable Notification")
+                }
+
+                Button(action: {
+                    print("Your programming language: \(self.languages[self.selectedLanguage])")
+                    print("Your working years: \(Int(self.workingYear))")
+                    print("Enable notification: \(self.enableNotification)")
+                }) {
+                    Text("Submit")
+                }
+            }.navigationBarTitle(Text("Profiles"))
+        }
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/13Form-Basic.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter4)
+
+
+<h4 id="14Form-Segment"> 第14节：Form-Segment </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+    private var languages = ["Swift", "Objective-C"]
+    @State private var selectedLanguage = 0
+    @State var workingYear: Double = 2
+    @State var enableNotification = false
+    var body: some View {
+        NavigationView {
+            Form {
+                Section(header: Text("Please enter your information:"), footer: Text("Note: Enabling notification to get more infomration")) {
+                    Picker(selection: $selectedLanguage, label: Text("Languages")) {
+                       ForEach(0 ..< languages.count) {
+                        Text(self.languages[$0]).tag($0)
+                       }
+                    }.pickerStyle(SegmentedPickerStyle())
+                    HStack{
+                        Text("Working years")
+                        Slider(value: $workingYear, in: 1...10, step: 1)
+                    }
+                    
+                    Toggle(isOn: $enableNotification) {
+                        Text("Enable Notification")
+                    }
+                }
+                Button(action: {
+                // activate theme!
+                    print("Your programming language: \(self.languages[self.selectedLanguage])")
+                    print("Your working years: \(Int(self.workingYear))")
+                    print("Enable notification: \(self.enableNotification)")
+                }) {
+                    Text("Submit")
+                }
+            }.navigationBarTitle(Text("Profiles"))
+        }
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/14Form-Segment.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter4)
+
+
+<h4 id="15Form-EnableDisable"> 第15节：Form-EnableDisable </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+
+    @State var enableForm = false
+    @State var enableNotification = false
+    @State var userName = ""
+    @State var password = ""
+
+    var body: some View {
+        NavigationView {
+            Form {
+                Toggle(isOn: $enableForm) {
+                    Text("Enable Form")
+                }
+                
+                Section(header: Text("Please enter your information:")) {
+                    
+                    TextField("Username", text: $userName)
+                    SecureField("Password", text: $password)
+                    Toggle(isOn: $enableNotification) {
+                        Text("Enable Notification")
+                    }
+                }.disabled(enableForm)
+                
+            }.navigationBarTitle(Text("Profiles"))
+        }
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/15Form-EnableDisable.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter4)
+
+
+<h4 id="16Form-ShowHide"> 第16节：Form-ShowHide </h4>
+<br/>
+示例代码：<br/>
+
+```swift
+struct ContentView : View {
+
+    @State var showingVisible = false
+    @State var userName = ""
+    @State var password = ""
+
+    var body: some View {
+        NavigationView {
+            Form {
+                Toggle(isOn: $showingVisible.animation()) {
+                    if(showingVisible){
+                        Text("Hide Form")
+                    }
+                    else{
+                        Text("Show Form")
+                    }
+                }
+                
+                if(showingVisible)
+                {
+                    Section(header: Text("Please enter your information:")) {
+                        
+                        TextField("Username", text: $userName)
+                        SecureField("Password", text: $password)
+                    }
+                }
+            }.navigationBarTitle(Text("Profiles"))
+        }
+    }
+}
+```
+
+<details close>
+  <summary>查看运行结果</summary>
+<img width="100%" src="images/16Form-ShowHide.png"/>
+</details>
+
+[<img width="89" src="images/topIcon.png"/>](#Chapter4)
