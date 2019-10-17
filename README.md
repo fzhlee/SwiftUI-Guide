@@ -17,9 +17,8 @@ Command + Option + P : 刷新预览窗口<br/>
 
 <br/>
 SwiftUI的85节教程及源码<br/>
-所有课程基于Xcode 11 beta5，并在Xcode 11 beta5上编译通过。<br/>
-Xcode 11 beta版本下载地址：https://developer.apple.com/download/ <br/>
-当Xcode11正式版发布之后，会更新所有源码，以适配Xcode 11正式版。<br/>
+所有课程的源码在Xcode 11.1正式版上编译通过。<br/>
+Xcode 11版本下载地址：https://developer.apple.com/download/ <br/>
 <br/>
 iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费下载：<br/>
 1、互动教程合集：https://apps.apple.com/cn/app/id1392811165<br/>
