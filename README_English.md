@@ -17,8 +17,8 @@ Command + Option + P : Refresh the preview window<br/>
 
 <br/>
 This page has 86 SwiftUI examples, and records the screenshots of all results here, hope to be helpful to you.<br/>
-All examples are based on Xcode 11 beta5 for now.<br/>
-Xcode 11 beta link : https://developer.apple.com/download/ <br/>
+All examples are based on Xcode 11.1 for now.<br/>
+Xcode 11 link: https://developer.apple.com/download/ <br/>
 <br/>
 ios development 426 tutorials on the App Store:<br/>
 https://apps.apple.com/us/app/ios-development-426-tutorials/id1225080698?l=en<br/>
