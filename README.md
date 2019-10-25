@@ -11,7 +11,7 @@ SwiftUI具有易于阅读和自然编写的声明式Swift语法，可与新的Xc
 <br/><br/>
 <img width="320" src="images/4DCards.gif"/>
 <br/>
-SwiftUI实例之一
+[点击查看SwiftUI实例的动画演示](#swiftuicases)
 
 <br/>
 ---
