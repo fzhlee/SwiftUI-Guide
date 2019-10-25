@@ -1,13 +1,14 @@
 <img width="640" src="images/GithubSwiftUICover2.png"/>
 
 <br/>
+
 ## SwiftUI 
-**
+
 Better apps. Less code.<br/>
 SwiftUI is an innovative, exceptionally simple way to build user interfaces across all Apple platforms with the power of Swift. Build user interfaces for any Apple device using just one set of tools and APIs. <br/>
 With a declarative Swift syntax that’s easy to read and natural to write, SwiftUI works seamlessly with new Xcode design tools to keep your code and design perfectly in sync. <br/>
 Automatic support for Dynamic Type, Dark Mode, localization, and accessibility means your first line of SwiftUI code is already the most powerful UI code you’ve ever written.
-**
+
 <br/>
 
 <img width="320" src="images/4DCards.gif"/>
@@ -31,10 +32,6 @@ https://apps.apple.com/us/app/ios-development-426-tutorials/id1225080698?l=en<br
 <br/>
 
 ---
-
-![image](https://github.com/fzhlee/SwiftUI-Guide/blob/master/images/SwiftUI.png)
-<br/>
-from developer.apple.com<br/>
 
 ## Navigator：
 
