@@ -2,13 +2,13 @@
 ![image](images/GithubSwiftUICover2.png)<br/><br/>
 [<img width="50" src="images/USFlag.png"/><br/>English Version >](README_English.md)
 <br/><br/>
-**SwiftUI<br/>**
+**SwiftUI**<br/>
 更好的应用，更少的代码。<br/>
 SwiftUI是一种创新、简单的iOS开发中的界面布局方案，可以通过Swift语言的强大功能，在所有的Apple平台上快速构建用户界面。 仅使用一组工具和API为任何Apple设备构建用户界面。 <br/>
 SwiftUI具有易于阅读和自然编写的声明式Swift语法，可与新的Xcode设计工具无缝协作，使您的代码和设计完美同步。 <br/>
 自动支持动态类型、暗黑模式、本地化和可访问性，意味着您的第一行SwiftUI代码已经是您编写过的最强大的UI代码了。
 
-<br/><br/>
+<br/>
 <img width="320" src="images/4DCards.gif"/>
 <br/>
 [点击查看全部的SwiftUI实例的动画演示](#swiftuicases)
