@@ -140,8 +140,8 @@ iOS开发相关互动课程列表，手把手学习iOS开发，App Store免费�
 	- [11ViewModifier](#11ViewModifier)
 	<br/>
 
-* <span id="Chapter7">第七章: SwiftUI实例</span>
-	- [点击查看实例的动画演示](#swiftuicases)
+* <span id="Chapter7">第七章: SwiftUI实战[共包含12个超炫的实例]</span>
+	- [点击查看SwiftUI实例的动画演示](#swiftuicases)
 	
 # 第一章 常用的Views<br/>
 <h4 id="1FirstProject"> 第1节：SwiftUI空白项目的创建步骤：<h4>
@@ -3537,9 +3537,18 @@ struct myImageStyle: ViewModifier {
 
 [<img width="89" src="images/topIcon.png"/>](#Chapter6)
 
-
+<h4 id="swiftuicases"></h4>
 # SwiftUI炫酷实例的动画演示<br/>
-<h4 id="swiftuicases"> 实例代码正在被整理成互动课程，并集成于Xcode互动教程中，敬请期待！</h4>
-<img width="100%" src="images/1SwiftUI.gif"/><br/><br/>
-<img width="100%" src="images/2GameType.gif"/><br/><br/>
-swiftuicases
+<h4> 实例代码正在被整理成互动课程，未来将集成在Xcode互动教程中[https://itunes.apple.com/cn/app/id1063100471(#https://itunes.apple.com/cn/app/id1063100471)]，敬请期待！</h4>
+<img width="320px" src="images/1SwiftUI.gif"/><br/><br/>
+<img width="320px" src="images/2GameType.gif"/><br/><br/>
+<img width="320px" src="images/3ARProduct.gif"/><br/><br/>
+<img width="320px" src="images/4DCards.gif"/><br/><br/>
+<img width="320px" src="images/5Deposits.gif"/><br/><br/>
+<img width="320px" src="images/6LoginPage.gif"/><br/><br/>
+<img width="320px" src="images/7DonutChart.gif"/><br/><br/>
+<img width="320px" src="images/8SlidePages.gif"/><br/><br/>
+<img width="320px" src="images/9Icecream.gif"/><br/><br/>
+<img width="320px" src="images/10Fitness.gif"/><br/><br/>
+<img width="320px" src="images/11Financo.gif"/><br/><br/>
+
