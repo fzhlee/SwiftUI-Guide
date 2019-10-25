@@ -11,7 +11,7 @@ SwiftUI具有易于阅读和自然编写的声明式Swift语法，可与新的Xc
 <br/><br/>
 <img width="320" src="images/4DCards.gif"/>
 <br/>
-[点击查看SwiftUI实例的动画演示](#swiftuicases)
+[点击查看全部的SwiftUI实例的动画演示](#swiftuicases)
 
 <br/>
 ---
@@ -3546,7 +3546,7 @@ struct myImageStyle: ViewModifier {
 
 # SwiftUI炫酷实例的动画演示<br/>
 
-<h4> 实例代码正在被整理成互动课程，将集成在Xcode互动教程中，敬请期待！</h4>[https://itunes.apple.com/cn/app/id1063100471](#https://itunes.apple.com/cn/app/id1063100471)
+<h4> 实例代码正在被整理成互动课程，将集成在Xcode互动教程中[https://itunes.apple.com/cn/app/id1063100471]，敬请期待！</h4>
 <img width="320px" src="images/1SwiftUI.gif"/><br/><br/>
 <img width="320px" src="images/2GameType.gif"/><br/><br/>
 <img width="320px" src="images/3ARProduct.gif"/><br/><br/>
