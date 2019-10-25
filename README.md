@@ -8,7 +8,10 @@ SwiftUI是一种创新、简单的iOS开发中的界面布局方案，可以通�
 SwiftUI具有易于阅读和自然编写的声明式Swift语法，可与新的Xcode设计工具无缝协作，使您的代码和设计完美同步。 <br/>
 自动支持动态类型、暗黑模式、本地化和可访问性，意味着您的第一行SwiftUI代码已经是您编写过的最强大的UI代码了。**
 <br/>
-
+<img width="89" src="images/4DCards.gif"/>
+<br/>
+SwiftUI实例之一
+<br/>
 ---
 
 SwiftUI开发实用快捷键<br/>
@@ -3538,8 +3541,10 @@ struct myImageStyle: ViewModifier {
 [<img width="89" src="images/topIcon.png"/>](#Chapter6)
 
 <h4 id="swiftuicases"></h4>
+
 # SwiftUI炫酷实例的动画演示<br/>
-<h4> 实例代码正在被整理成互动课程，未来将集成在Xcode互动教程中[https://itunes.apple.com/cn/app/id1063100471(#https://itunes.apple.com/cn/app/id1063100471)]，敬请期待！</h4>
+
+<h4> 实例代码正在被整理成互动课程，将集成在Xcode互动教程中，敬请期待！</h4>[https://itunes.apple.com/cn/app/id1063100471](#https://itunes.apple.com/cn/app/id1063100471)
 <img width="320px" src="images/1SwiftUI.gif"/><br/><br/>
 <img width="320px" src="images/2GameType.gif"/><br/><br/>
 <img width="320px" src="images/3ARProduct.gif"/><br/><br/>
