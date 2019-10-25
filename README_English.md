@@ -1,13 +1,17 @@
+<img width="640" src="images/GithubSwiftUICover2.png"/>
 
-![image](images/GithubSwiftUICover2.png)<br/>
-
-<br/><br/>
+<br/>
 **SwiftUI<br/>
 Better apps. Less code.<br/>
 SwiftUI is an innovative, exceptionally simple way to build user interfaces across all Apple platforms with the power of Swift. Build user interfaces for any Apple device using just one set of tools and APIs. <br/>
 With a declarative Swift syntax that’s easy to read and natural to write, SwiftUI works seamlessly with new Xcode design tools to keep your code and design perfectly in sync. <br/>
 Automatic support for Dynamic Type, Dark Mode, localization, and accessibility means your first line of SwiftUI code is already the most powerful UI code you’ve ever written.**
 <br/>
+
+<img width="320" src="images/4DCards.gif"/>
+
+[View all](#swiftuicases)
+
 
 ---
 
@@ -134,6 +138,9 @@ from developer.apple.com<br/>
 	- [10NavigationItem](#10NavigationItem)
 	- [11ViewModifier](#11ViewModifier)
 	<br/>
+	
+* <span id="Chapter7">Chapter 6: Projects by SwiftUI</span>
+	- [View all](#swiftuicases)
 	
 # Chapter 1: Views<br/>
 <h4 id="1FirstProject"> 1、How to create a SwiftUI project: <h4>
@@ -3529,3 +3536,21 @@ struct myImageStyle: ViewModifier {
 </details>
 
 [<img width="89" src="images/topIcon.png"/>](#Chapter6)
+
+
+<h4 id="swiftuicases"></h4>
+
+# SwiftUI Projects<br/>
+
+<img width="320px" src="images/1SwiftUI.gif"/><br/><br/>
+<img width="320px" src="images/2GameType.gif"/><br/><br/>
+<img width="320px" src="images/3ARProduct.gif"/><br/><br/>
+<img width="320px" src="images/4DCards.gif"/><br/><br/>
+<img width="320px" src="images/5Deposits.gif"/><br/><br/>
+<img width="320px" src="images/6LoginPage.gif"/><br/><br/>
+<img width="320px" src="images/7DonutChart.gif"/><br/><br/>
+<img width="320px" src="images/8SlidePages.gif"/><br/><br/>
+<img width="320px" src="images/9Icecream.gif"/><br/><br/>
+<img width="320px" src="images/10Fitness.gif"/><br/><br/>
+<img width="320px" src="images/11Financo.gif"/><br/><br/>
+
