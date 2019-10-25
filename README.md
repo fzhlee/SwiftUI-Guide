@@ -1,9 +1,7 @@
 <img width="640" src="images/GithubSwiftUICover2.png"/>
-<br/><br/>
-
+<br/>
 [<img width="50" src="images/USFlag.png"/><br/>English Version >](README_English.md)
-
-<br/><br/>
+<br/>
 
 # SwiftUI<br/>
 更好的应用，更少的代码。<br/>
