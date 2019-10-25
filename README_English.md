@@ -1,6 +1,5 @@
 <img width="640" src="images/GithubSwiftUICover2.png"/>
 
-<br/>
 
 ## SwiftUI 
 
@@ -9,7 +8,6 @@ SwiftUI is an innovative, exceptionally simple way to build user interfaces acro
 With a declarative Swift syntax that’s easy to read and natural to write, SwiftUI works seamlessly with new Xcode design tools to keep your code and design perfectly in sync. <br/>
 Automatic support for Dynamic Type, Dark Mode, localization, and accessibility means your first line of SwiftUI code is already the most powerful UI code you’ve ever written.
 
-<br/>
 
 <img width="320" src="images/4DCards.gif"/>
 
@@ -29,7 +27,6 @@ Xcode 11 link: https://developer.apple.com/download/ <br/>
 <br/>
 ios development 426 tutorials on the App Store:<br/>
 https://apps.apple.com/us/app/ios-development-426-tutorials/id1225080698?l=en<br/>
-<br/>
 
 ---
 
