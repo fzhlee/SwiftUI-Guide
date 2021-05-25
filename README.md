@@ -22,8 +22,8 @@ Command + Option + Enter : 打开或关闭预览窗口<br/>
 Command + Option + P : 刷新预览窗口<br/>
 
 <br/>
-SwiftUI的196节教程及源码<br/>
-所有课程的源码在Xcode 11.1正式版上编译通过。<br/>
+SwiftUI的231节教程及源码<br/>
+所有课程的源码在Xcode 12.1正式版上编译通过。<br/>
 <br/>
 1184节海量iOS开发课程，手把手学习iOS开发，App Store免费下载：<br/>
 1、Xcode+SwiftUI互动教程免费下载地址：https://itunes.apple.com/cn/app/id1063100471<br/>
